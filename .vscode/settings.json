@@ -1,0 +1,35 @@
+{
+    "psi-header.variables": [
+        ["projectCreationYear", "2023"]
+    ],
+    "psi-header.templates": [
+        {
+            "language": "*",
+            "template": [
+                "File: <project root><<filerelativepath>>",
+                "Project: <<projectname>>",
+                "File Created: <<filecreated('dddd, Do MMMM YYYY h:mm:ss a')>>",
+                "Author: <<author>> (<<authoremail>>)",
+                "-----",
+                "Last Modified: <<dateformat('dddd, Do MMMM YYYY h:mm:ss a')>>",
+                "Modified By: <<author>> (<<authoremail>>>)",
+                "-----",
+                "Copyright (C) <<year>>  <<author>>",
+                "This program is free software: you can redistribute it and/or modify",
+                "it under the terms of the GNU Affero General Public License as published by",
+                "the Free Software Foundation, either version 3 of the License, or",
+                "any later version."
+            ]
+        }
+    ],
+    "psi-header.config": {
+        "author": "Simx72",
+        "authorEmail": "angel2600@proton.me",
+        "license": "AGPL-3.0",
+        "blankLinesAfter": 3
+    },
+    "psi-header.changes-tracking": {
+        "autoHeader": "autoSave"
+    }
+    
+}

@@ -1,0 +1,40 @@
+/*
+ * File: <project root>/sass/index.scss
+ * Project: simx72-website
+ * File Created: Thursday, 23rd November 2023 4:01:35 pm
+ * Author: Simx72 (angel2600@proton.me)
+ * -----
+ * Last Modified: Sunday, 3rd December 2023 3:26:07 pm
+ * Modified By: Simx72 (angel2600@proton.me>)
+ * -----
+ * Copyright (C) 2023  Simx72
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ */
+
+
+
+@import "./fonts";
+@import "./texto";
+@import "./general";
+
+
+/* it works! */
+@keyframes heartbeat {
+    from {
+        opacity: 100%;
+    }
+    to {
+        opacity: 0%;
+    }
+}
+.it-works-button {
+    background-color: rgb(3, 179, 3);;
+    display: inline-block;
+    width: 1rem;
+    height: 1rem;
+    border-radius: 500px;
+    animation: heartbeat infinite 1600ms ease-out;
+}

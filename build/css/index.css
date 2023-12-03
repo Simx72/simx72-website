@@ -1,0 +1,135 @@
+@charset "UTF-8";
+@import "../fonts/Fira_Code_v6.2/fira_code.css";
+.nodis {
+  opacity: 70%;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+/* Tamaños */
+.t-chiquito {
+  font-size: 10pt;
+}
+
+.t-chico {
+  font-size: 12pt;
+}
+
+.t-normal {
+  font-size: 14pt;
+}
+
+.t-grande {
+  font-size: 18pt;
+}
+
+.t-grandote {
+  font-size: 24pt;
+}
+
+:root {
+  --link-color: rgb(24, 225, 208);
+  --link-color-visited: rgb(29, 156, 145);
+}
+
+a {
+  color: var(--link-color);
+}
+a:link {
+  opacity: 100%;
+}
+a:visited {
+  color: var(--link-color-visited);
+  opacity: 70%;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body, html {
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  background-color: #202020;
+  color: #FFFFFF;
+  font-family: "Fira Code", "Courier New", Courier, monospace;
+}
+
+/* Header */
+body > #header {
+  padding: 1rem 2rem;
+  background-color: #353535;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+/* Cuerpo */
+#cuerpo {
+  max-width: 900px;
+  padding: 2rem 0;
+}
+
+.footer {
+  width: 100%;
+}
+.footer footer {
+  text-align: center;
+  margin: 1rem auto;
+}
+
+/* ## Organización ## */
+/* bloques */
+.bloque { /* bloque básico */
+  background-color: rgba(159, 159, 159, 0.7);
+  border-radius: 1.6rem;
+  backdrop-filter: blur(3px);
+  padding: 1rem 2rem;
+}
+
+/* posicionamiento */
+.left {
+  margin-right: auto;
+}
+
+.center, #cuerpo {
+  margin-right: auto;
+  margin-left: auto;
+}
+
+.right {
+  margin-left: auto;
+}
+
+.f-left {
+  float: left;
+}
+
+.f-right {
+  float: right;
+}
+
+/* it works! */
+@keyframes heartbeat {
+  from {
+    opacity: 100%;
+  }
+  to {
+    opacity: 0%;
+  }
+}
+.it-works-button {
+  background-color: rgb(3, 179, 3);
+  display: inline-block;
+  width: 1rem;
+  height: 1rem;
+  border-radius: 500px;
+  animation: heartbeat infinite 1600ms ease-out;
+}
+
+/*# sourceMappingURL=index.css.map */

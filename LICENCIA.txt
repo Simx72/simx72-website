@@ -1,0 +1,7 @@
+Todos los archivos de este proyecto estan distribuidos
+bajo los terminos y condiciones de 
+la licencia GNU AFFERO GENERAL PUBLIC LICENSE, a menos
+que se indique lo contrario.
+
+Usted debería haber recibido una copia de esta licencia
+llamada agpl-3.0.txt, si no, puede obtener una en https://www.gnu.org/licenses/.

@@ -1,0 +1,87 @@
+/*
+ * File: <project root>/sass/_general.scss
+ * Project: simx72-website
+ * File Created: Saturday, 25th November 2023 11:58:55 pm
+ * Author: Simx72 (angel2600@proton.me)
+ * -----
+ * Last Modified: Sunday, 3rd December 2023 3:25:54 pm
+ * Modified By: Simx72 (angel2600@proton.me>)
+ * -----
+ * Copyright (C) 2023  Simx72
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ */
+
+
+
+* {
+    box-sizing: border-box;
+}
+
+body, html {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #202020;
+    color: #FFFFFF;
+    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+}
+
+/* Header */
+body>#header {
+    padding: 1rem 2rem;
+    background-color: #353535;
+    display: flex;
+    flex-direction: row;
+    align-items: center;   
+}
+
+/* Cuerpo */
+#cuerpo {
+    @extend .center;
+    max-width: 900px;
+    // border: 1px solid black;
+    padding: 2rem 0;
+}
+
+.footer {
+    width: 100%;
+    footer {
+        text-align: center;
+        margin: 1rem auto;
+    }
+}
+
+
+/* ## Organización ## */
+
+/* bloques */
+.bloque { /* bloque básico */
+    background-color: rgba($color: rgb(159, 159, 159), $alpha: .7);
+    border-radius: 1.6rem;
+    backdrop-filter: blur(3px);
+    padding: 1rem 2rem;
+}
+
+/* posicionamiento */
+.left {
+    margin-right: auto;
+}
+.center {
+    margin-right: auto;
+    margin-left: auto;
+}
+.right {
+    margin-left: auto;
+}
+
+.f-left {
+    float: left;
+}
+.f-right {
+    float: right;
+}

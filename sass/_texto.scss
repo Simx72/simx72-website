@@ -1,0 +1,60 @@
+/*
+ * File: <project root>/sass/_texto.scss
+ * Project: simx72-website
+ * File Created: Saturday, 25th November 2023 11:43:35 pm
+ * Author: Simx72 (angel2600@proton.me)
+ * -----
+ * Last Modified: Sunday, 3rd December 2023 3:26:01 pm
+ * Modified By: Simx72 (angel2600@proton.me>)
+ * -----
+ * Copyright (C) 2023  Simx72
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ */
+
+
+
+.nodis {
+    opacity: 70%;
+}
+
+.bold {
+    font-weight: bold;
+}
+
+.t-center {
+    text-align: center;
+}
+
+/* Tamaños */
+$tamannos: (
+    "chiquito": 10pt,
+    "chico": 12pt,
+    "normal": 14pt,
+    "grande": 18pt,
+    "grandote": 24pt,
+);
+
+@each $t, $val in $tamannos {
+    .t-#{$t} {
+        font-size: $val;
+    }
+}
+
+:root {
+    --link-color: rgb(24, 225, 208);
+    --link-color-visited: rgb(29, 156, 145);
+}
+
+a {
+    color: var(--link-color);
+    &:link {
+        opacity: 100%;
+    }
+    &:visited {
+        color: var(--link-color-visited);
+        opacity: 70%;
+    }
+}
