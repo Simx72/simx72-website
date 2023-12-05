@@ -1,7 +1,8 @@
 {
   "name": "simx72-website",
   "scripts": {
-    "dev": "sass \"./sass/index.scss\":\"./build/css/index.css\" -w"
+    "dev": "sass \"./sass/index.scss\":\"./build/css/index.css\" -w",
+    "build": "sass \"./sass/index.scss\":\"./build/css/index.css\" \"./node_modules/bootstrap/scss/bootstrap-grid.scss\":\"./build/css/bgrid.css\""
   },
   "devDependencies": {
     "sass": "^1.69.5"
@@ -14,5 +15,8 @@
     "personal-site"
   ],
   "author": "Simx72",
-  "license": "AGPL-3.0-or-later"
+  "license": "AGPL-3.0-or-later",
+  "dependencies": {
+    "bootstrap": "^5.3.2"
+  }
 }
