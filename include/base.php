@@ -55,7 +55,7 @@ function head()
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
 
-	<link rel="stylesheet" href="./css/index.css?<?php echo filemtime(dirname(__FILE__).'/../css/index.css'); ?>">
+	<link rel="stylesheet" href="/build/css/index.css?<?php echo filemtime(dirname(__FILE__).'/../build/css/index.css'); ?>">
 
 	<title><?php echo $titulo." - ".$nom_sitio; ?></title>
 </head>
