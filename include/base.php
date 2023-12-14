@@ -87,7 +87,7 @@ function myheader()
 
 	<header id="header">
 		<div class="left">
-			
+			<?php HeaderL(); ?>
 		</div>
 		<div class="center">
 			<?php HeaderC(); ?>
