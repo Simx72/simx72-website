@@ -118,7 +118,7 @@ function pies()
 	</section>
 	<section class="footer">
 		<footer>
-		<program>  Copyright &copy; 2023  Simx72
+		Simx72-website  Copyright &copy; 2023  Simx72
 	Este sitio esta bajo licencia GNU-AGPL-v3, para mas detalles vaya a <a href="./licencia.php">./licencia.php</a>.
 	<br>
 	Esto es software libre, siéntase libre de redistribuirlo y modificarlo siempre y cuando <br> cumpla con las condiciones; mas detalles en <a href="./licencia.php#terms">./licencia#terms</a>.
