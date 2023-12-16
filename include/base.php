@@ -20,17 +20,18 @@
 $titulo = "[Título]";
 $nom_sitio = "sdesim.ca";
 $filepath = __FILE__;
+$fileyear = "2023"; // replace with current year
 
 function template_config($title, $__FILE__) {
-	global $titulo, $filepath;
+	global $titulo, $filepath, $fileyear;
 	$titulo = $title;
 	$filepath = $__FILE__;
+	$fileyear = date ("Y", filemtime($filepath));
 }
 
 function head()
 {
-	global $titulo, $nom_sitio, $filepath;
-	$fileyear = date ("Y", filemtime($filepath));
+	global $titulo, $nom_sitio, $fileyear;
 	?>
 
 	<!-- 
@@ -38,20 +39,20 @@ function head()
 	de aplicaciones y videojuegos ;) 
 
 
-    Copyright (C) <?php echo $fileyear; ?>  Simx72
+	Copyright (C) <?php echo $fileyear; ?>  Simx72
 
-    This program is free software: you can redistribute it and/or modify
-    it under the terms of the GNU Affero General Public License as published by
-    the Free Software Foundation, either version 3 of the License, or
-    (at your option) any later version.
+	This program is free software: you can redistribute it and/or modify
+	it under the terms of the GNU Affero General Public License as published by
+	the Free Software Foundation, either version 3 of the License, or
+	(at your option) any later version.
 
-    This program is distributed in the hope that it will be useful,
-    but WITHOUT ANY WARRANTY; without even the implied warranty of
-    MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
-    GNU Affero General Public License for more details.
+	This program is distributed in the hope that it will be useful,
+	but WITHOUT ANY WARRANTY; without even the implied warranty of
+	MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+	GNU Affero General Public License for more details.
 
-    You should have received a copy of the GNU Affero General Public License
-    along with this program.  If not, see <https://www.gnu.org/licenses/>.
+	You should have received a copy of the GNU Affero General Public License
+	along with this program.  If not, see <https://www.gnu.org/licenses/>.
 	-->
 
 <!DOCTYPE html>
@@ -72,108 +73,49 @@ function head()
 	?> <section id="cuerpo"> <?php
 }
 
-function HeaderL() {
-	?>
-	<a href="./">Ir a inicio</a>
-	<?php
-}
-function HeaderC() {
-	global $titulo;
-	echo '<span class="bold t-grande">'.$titulo.'</span>';
-}
-function HeaderR() {
-	/* T*T */
-	?>
-	<div class="nodis">Prontoo... :)</div>
-	<?php
-}
-
-
 function myheader()
 {
 	?>
-	<nav
-		class="navbar navbar-expand-sm navbar-light bg-light"
-	>
+	<div class="text-bg-dark">
 		<div class="container">
-			<a class="navbar-brand" href="/">Navbar</a>
-			<button
-				class="navbar-toggler d-lg-none"
-				type="button"
-				data-bs-toggle="collapse"
-				data-bs-target="#top-header-collapsibleNavId"
-				aria-controls="top-header-collapsibleNavId"
-				aria-expanded="false"
-				aria-label="Toggle navigation"
-			>
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="top-header-collapsibleNavId">
-				<ul class="navbar-nav me-auto mt-2 mt-lg-0">
-					<li class="nav-item">
-						<a class="nav-link active" href="/" aria-current="page"
-							>Inicio
-							<span class="visually-hidden">(current)</span></a
-						>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="/static">Static</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a
-							class="nav-link dropdown-toggle"
-							href="#"
-							id="dropdownId"
-							data-bs-toggle="dropdown"
-							aria-haspopup="true"
-							aria-expanded="false"
-							>Dropdown</a
-						>
-						<div
-							class="dropdown-menu"
-							aria-labelledby="dropdownId"
-						>
-							<a class="dropdown-item" href="#"
-								>Action 1</a
-							>
-							<a class="dropdown-item" href="#"
-								>Action 2</a
-							>
-						</div>
-					</li>
-				</ul>
-				<form class="d-flex my-2 my-lg-0">
-					<input
-						class="form-control me-sm-2"
-						type="text"
-						placeholder="Bus"
-					/>
-					<button
-						class="btn btn-outline-success my-2 my-sm-0"
-						type="submit"
-					>
-						[lupita de detective :D]
-					</button>
-				</form>
+		  <div class="d-flex flex-wrap align-items-center justify-content-center justify-content-lg-start">
+			<div class="d-flex itworks">
+				
+				It works
 			</div>
+	
+			<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+			  <li><a href="#" class="nav-link px-2 text-secondary">Home</a></li>
+			  <li><a href="#" class="nav-link px-2 text-white">Features</a></li>
+			  <li><a href="#" class="nav-link px-2 text-white">Pricing</a></li>
+			  <li><a href="#" class="nav-link px-2 text-white">FAQs</a></li>
+			  <li><a href="#" class="nav-link px-2 text-white">About</a></li>
+			</ul>
+	
+			<form class="col-12 col-lg-auto mb-3 mb-lg-0 me-lg-3" role="search">
+			  <input type="search" class="form-control form-control-dark text-bg-dark" placeholder="Search..." aria-label="Search">
+			</form>
+		  </div>
 		</div>
-	</nav>
+	</div>
 
 	<?php
 }
-
+/**
+ * @deprecated
+ */
 function fullhead() {
 	head();
-	myheader();
 }
 
 function pies()
 {
+	global $fileyear;
 	?>
 	</section>
 	<section class="footer">
 		<footer>
-		Simx72-website  Copyright &copy; 2023  Simx72
+		Simx72-website  Copyright &copy; <?php echo $fileyear; ?>  Simx72
 	Este sitio esta bajo licencia GNU-AGPL-v3, para mas detalles vaya a <a href="./licencia.php">./licencia.php</a>.
 	<br>
 	Esto es software libre, siéntase libre de redistribuirlo y modificarlo siempre y cuando <br> cumpla con las condiciones; mas detalles en <a href="./licencia.php#terms">./licencia#terms</a>.
