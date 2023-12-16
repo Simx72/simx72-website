@@ -61,8 +61,8 @@ function head()
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
 
-	<link rel="stylesheet" href="./build/css/index.css?<?php echo filemtime(dirname(__FILE__).'/../build/css/index.css'); ?>">
-	<link rel="stylesheet" href="./build/css/bgrid.css?<?php echo filemtime(dirname(__FILE__).'/../build/css/bgrid.css'); ?>">
+	<link rel="stylesheet" href="/build/css/index.css?<?php echo filemtime(dirname(__FILE__).'/../build/css/index.css'); ?>">
+	<link rel="stylesheet" href="/build/css/bgrid.css?<?php echo filemtime(dirname(__FILE__).'/../build/css/bgrid.css'); ?>">
 
 	<title><?php echo $titulo." - ".$nom_sitio; ?></title>
 </head>
