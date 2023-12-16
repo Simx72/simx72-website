@@ -19,7 +19,7 @@
 
 require './include/base.php';
 
-$titulo="Créditos";
+template_config("Créditos", __FILE__);
 
 fullhead();
 

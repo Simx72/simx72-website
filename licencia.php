@@ -19,8 +19,7 @@
 
 require "./include/base.php";
 
-$titulo = "Licencia";
-$filepath = __FILE__;
+template_config("Licencia", __FILE__);
 
 fullhead();
 ?>

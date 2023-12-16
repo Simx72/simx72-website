@@ -19,7 +19,7 @@
 
 require './include/base.php';
 
-$titulo="Inicio";
+template_config("Inicio", __FILE__);
 
 head();
 
