@@ -2,7 +2,7 @@
   "name": "simx72-website",
   "scripts": {
     "dev": "sass \"./sass/index.scss\":\"./build/css/index.css\" -w",
-    "build": "sass \"./sass/index.scss\":\"./build/css/index.css\" \"./node_modules/bootstrap/scss/bootstrap-grid.scss\":\"./build/css/bgrid.css\""
+    "build": "sass \"./sass/index.scss\":\"./build/css/index.css\" \"./node_modules/bootstrap/scss/bootstrap.scss\":\"./build/css/bootstrap.css\""
   },
   "devDependencies": {
     "sass": "^1.69.5"

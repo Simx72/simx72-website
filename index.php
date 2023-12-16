@@ -24,24 +24,13 @@ template_config("Inicio", __FILE__);
 head();
 
 ?>
-<header id="header">
-        <div class="left">
-            <span class="it-works-button"></span>
-            It works!
-        </div>
-        <div class="center">
-            <?php HeaderC(); ?>
-        </div>
-        <div class="right">
-            <?php HeaderR(); ?>
-        </div>
-    </header>
-    <section id="cuerpo">
-	<div class="bloque">
+	
+    <div class="bloque">
 		Bienvenido al inicio. <br>
 		Aún no hay nada pero algún día habrá algo. <br>
 		Hasta la próxima...
 	</div>
+    
 <?php
 
 pies();

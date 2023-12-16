@@ -62,12 +62,14 @@ function head()
 	<link rel="shortcut icon" href="./favicon.png" type="image/x-icon">
 
 	<link rel="stylesheet" href="/build/css/index.css?<?php echo filemtime(dirname(__FILE__).'/../build/css/index.css'); ?>">
-	<link rel="stylesheet" href="/build/css/bgrid.css?<?php echo filemtime(dirname(__FILE__).'/../build/css/bgrid.css'); ?>">
+	<link rel="stylesheet" href="/build/css/bootstrap.css?<?php echo filemtime(dirname(__FILE__).'/../build/css/bootstrap.css'); ?>">
 
 	<title><?php echo $titulo." - ".$nom_sitio; ?></title>
 </head>
 <body>
 <?php
+	myheader();
+	?> <section id="cuerpo"> <?php
 }
 
 function HeaderL() {
@@ -156,19 +158,6 @@ function myheader()
 			</div>
 		</div>
 	</nav>
-	
-	<header id="header">
-		<div class="mr-auto">
-			<?php HeaderL(); ?>
-		</div>
-		<div class="center">
-			<?php HeaderC(); ?>
-		</div>
-		<div class="ml-auto">
-			<?php HeaderR(); ?>
-		</div>
-	</header>
-	<section id="cuerpo">
 
 	<?php
 }
