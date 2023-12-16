@@ -19,7 +19,7 @@
 
 $titulo = "[Título]";
 $nom_sitio = "sdesim.ca";
-$filepath = "";
+$filepath = __FILE__;
 
 function template_config($title, $__FILE__) {
 	global $titulo, $filepath;
