@@ -135,7 +135,6 @@ body > #header {
 
 /* Cuerpo */
 #cuerpo {
-  max-width: 900px;
   padding: 2rem 0;
 }
 
@@ -150,6 +149,7 @@ body > #header {
 /* ## Organización ## */
 /* bloques */
 .bloque { /* bloque básico */
+  max-width: 900px;
   background-color: rgba(159, 159, 159, 0.7);
   border-radius: 1.6rem;
   backdrop-filter: blur(3px);
@@ -161,7 +161,7 @@ body > #header {
   margin-right: auto;
 }
 
-.center, #cuerpo {
+.center, .bloque {
   margin-right: auto;
   margin-left: auto;
 }

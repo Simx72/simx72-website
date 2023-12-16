@@ -42,8 +42,6 @@ body>#header {
 
 /* Cuerpo */
 #cuerpo {
-    @extend .center;
-    max-width: 900px;
     // border: 1px solid black;
     padding: 2rem 0;
 }
@@ -61,6 +59,8 @@ body>#header {
 
 /* bloques */
 .bloque { /* bloque básico */
+    @extend .center;
+    max-width: 900px;
     background-color: rgba($color: rgb(159, 159, 159), $alpha: .7);
     border-radius: 1.6rem;
     backdrop-filter: blur(3px);
