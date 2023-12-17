@@ -116,9 +116,9 @@ function pies()
 	?>
 		</section>
 		<div id="footer-1" class="footer row sticky">
-				<p class="text-center">
+				<span class="text-center">
 					Simx72-website  Copyright &copy; <?php echo $fileyear; ?>  Simx72
-				</p>
+				</span>
 			</div>
 		</div>
 		<section id="footer">
