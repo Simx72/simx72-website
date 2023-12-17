@@ -17,7 +17,7 @@
 
 require "./include/base.php";
 
-template_config("Juegos", __FILE__);
+template_config("Secciones", __FILE__);
 
 head();
 pies();

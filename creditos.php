@@ -2,10 +2,10 @@
 /*
  * File: <project root>/creditos.php
  * Project: simx72-website
- * File Created: Saturday, 25th November 2023 11:28:11 pm
+ * File Created: Saturday, 16th December 2023 10:45:17 pm
  * Author: Simx72 (angel2600@proton.me)
  * -----
- * Last Modified: Sunday, 3rd December 2023 3:26:39 pm
+ * Last Modified: Sunday, 17th December 2023 11:45:39 am
  * Modified By: Simx72 (angel2600@proton.me>)
  * -----
  * Copyright (C) 2023  Simx72
@@ -17,11 +17,15 @@
 
 
 
+
+
+
+
 require './include/base.php';
 
 template_config("Créditos", __FILE__);
 
-fullhead();
+head();
 
 ?>
 	<div class="bloque">
