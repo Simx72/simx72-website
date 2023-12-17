@@ -12016,14 +12016,28 @@ body > #header {
 /* Cuerpo */
 #cuerpo {
   padding: 2rem 0;
+  min-height: 100vh;
 }
 
-.footer {
-  width: 100%;
+#footer-1 {
+  height: 1.5rem;
 }
-.footer footer {
-  text-align: center;
-  margin: 1rem auto;
+
+#footer #footer-box {
+  background-color: darkblue;
+  padding: 1rem;
+  width: 100vw;
+}
+#footer #footer-box > .footer {
+  max-width: 900px;
+}
+
+.sticky {
+  position: -webkit-sticky;
+  position: sticky;
+  bottom: 0;
+  width: 100vw;
+  background: darkblue;
 }
 
 /* ## Organización ## */
@@ -12056,6 +12070,10 @@ body > #header {
 
 .f-right {
   float: right;
+}
+
+.mw-900 {
+  max-width: 900px;
 }
 
 /* it works! */

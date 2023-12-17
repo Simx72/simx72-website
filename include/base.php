@@ -89,7 +89,6 @@ function myheader()
 				<li><a href="/juegos.php"	class="normal px-2">Juegos</a></li>
 				<li><a href="/blog.php"		class="normal px-2">Blog</a></li>
 				<li><a href="/faq.php"		class="normal px-2">FAQ</a></li>
-				<li><a href="/git.php"		class="normal px-2">Git</a></li>
 				<li><a href="/sobre_mi.php"	class="normal px-2">Sobre mí</a></li>
 			</ul>
 
@@ -115,17 +114,39 @@ function pies()
 {
 	global $fileyear;
 	?>
-	</section>
-	<section class="footer">
-		<footer>
-		Simx72-website  Copyright &copy; <?php echo $fileyear; ?>  Simx72
-	Este sitio esta bajo licencia GNU-AGPL-v3, para mas detalles vaya a <a href="./licencia.php">./licencia.php</a>.
-	<br>
-	Esto es software libre, siéntase libre de redistribuirlo y modificarlo siempre y cuando <br> cumpla con las condiciones; mas detalles en <a href="./licencia.php#terms">./licencia#terms</a>.
-	<p class="t-chiquito">Por el momento no he configurado el servidor para mostrar el repositorio pero si necesitas el codigo fuente puedes pedirmelo escribiendo a <a href="mailto:angel2600@proton.me">angel2600@proton.me</a></p>		
-</footer>
-	</section>
-</body>
+		</section>
+		<div id="footer-1" class="footer row sticky">
+				<p class="text-center">
+					Simx72-website  Copyright &copy; <?php echo $fileyear; ?>  Simx72
+				</p>
+			</div>
+		</div>
+		<section id="footer">
+			<div id="footer-box">
+				<div class="container-sm">
+					<div id="footer-2" class="footer row">
+						<div class="col-md-6">
+							<a href="mailto:angel2600@proton.me">angel2600@proton.me</a>
+						</div>
+						<div class="col-md-6">
+							<a href="/git.php">Git</a>
+						</div>
+					</div>
+					<div id="footer-3" class="footer text-center">
+						<p>
+							Este sitio esta bajo licencia GNU-AGPL-v3, para mas detalles vaya a <a href="/licencia.php">/licencia.php</a>.
+						</p>
+						<p>
+							Esto es software libre, siéntase libre de redistribuirlo y modificarlo siempre y cuando cumpla con las condiciones; mas detalles en <a href="/licencia.php#terms">/licencia.php#terms</a>.
+						</p>
+						<p class="t-chiquito">
+							Por el momento no he configurado el servidor para mostrar el repositorio, pero puedes pedirme el código fuente a <a href="mailto:angel2600@proton.me">angel2600@proton.me</a>
+						</p>
+					</div>
+				</div>
+			</div>
+		</section>
+	</body>
 </html>
 	<?php
 }

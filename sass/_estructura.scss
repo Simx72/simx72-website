@@ -17,71 +17,91 @@
 
 
 * {
-    box-sizing: border-box;
+	box-sizing: border-box;
 }
 
 body, html {
-    margin: 0;
-    padding: 0;
+	margin: 0;
+	padding: 0;
 }
 
 body {
-    background-color: #202020;
-    color: #FFFFFF;
-    font-family: 'Fira Code', 'Courier New', Courier, monospace;
+	background-color: #202020;
+	color: #FFFFFF;
+	font-family: 'Fira Code', 'Courier New', Courier, monospace;
 }
 
 /* Header */
 body>#header {
-    padding: 1rem 2rem;
-    background-color: #353535;
-    display: flex;
-    flex-direction: row;
-    align-items: center;   
+	padding: 1rem 2rem;
+	background-color: #353535;
+	display: flex;
+	flex-direction: row;
+	align-items: center;   
 }
 
 /* Cuerpo */
 #cuerpo {
-    // border: 1px solid black;
-    padding: 2rem 0;
+	// border: 1px solid black;
+	padding: 2rem 0;
+	min-height: 100vh;
 }
 
-.footer {
-    width: 100%;
-    footer {
-        text-align: center;
-        margin: 1rem auto;
-    }
+#footer-1 {
+	height: 1.5rem;
 }
 
+#footer {
+	#footer-box {
+		background-color: darkblue;
+		padding: 1rem;
+		width: 100vw;
+		>.footer {
+			max-width: 900px;
+		}
+	}
+}
+
+.sticky {
+	position: -webkit-sticky;
+	position: sticky;
+	bottom: 0;
+	width: 100vw;
+	background: darkblue;
+}
 
 /* ## Organización ## */
 
 /* bloques */
 .bloque { /* bloque básico */
-    @extend .center;
-    max-width: 900px;
-    background-color: rgba($color: rgb(159, 159, 159), $alpha: .7);
-    border-radius: 1.6rem;
-    backdrop-filter: blur(3px);
-    padding: 1rem 2rem;
+	@extend .center;
+	max-width: 900px;
+	background-color: rgba($color: rgb(159, 159, 159), $alpha: .7);
+	border-radius: 1.6rem;
+	backdrop-filter: blur(3px);
+	padding: 1rem 2rem;
 }
 
 /* posicionamiento */
 .left {
-    margin-right: auto;
+	margin-right: auto;
 }
 .center {
-    margin-right: auto;
-    margin-left: auto;
+	margin-right: auto;
+	margin-left: auto;
 }
 .right {
-    margin-left: auto;
+	margin-left: auto;
 }
 
 .f-left {
-    float: left;
+	float: left;
 }
 .f-right {
-    float: right;
+	float: right;
 }
+
+.mw-900 {
+	max-width: 900px;
+}
+
