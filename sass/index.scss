@@ -31,11 +31,12 @@
         opacity: 0%;
     }
 }
-.it-works-button {
-    background-color: rgb(3, 179, 3);;
-    display: inline-block;
-    width: 1rem;
-    height: 1rem;
-    border-radius: 500px;
+
+
+.it-works-button::before {
+    color: rgb(3, 179, 3);
+    content: "●";
     animation: heartbeat infinite 1600ms ease-out;
 }
+
+

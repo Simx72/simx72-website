@@ -51,10 +51,21 @@ $tamannos: (
 a {
     color: var(--link-color);
     &:link {
+        color: var(--link-color);
         opacity: 100%;
     }
     &:visited {
         color: var(--link-color-visited);
         opacity: 70%;
     }
+}
+
+a.normal {
+    &:visited {
+        color: var(--link-color);
+    }
+}
+
+.nav a {
+    color: var(--link-color);
 }

@@ -84,11 +84,13 @@ function myheader()
 			</div>
 
 			<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
-				<li><a href="/" class="nav-link px-2 link-primary">Inicio</a></li>
-				<li><a href="/juegos.php" class="nav-link px-2">Juegos</a></li>
-				<li><a href="/blog.php" class="nav-link px-2">Blog</a></li>
-				<li><a href="/faq.php" class="nav-link px-2">FAQ</a></li>
-				<li><a href="/sobre_mi.php" class="nav-link px-2">Sobre mí</a></li>
+				<?php /* T*T volver amarillo si se para en él (con un script) */ ?>
+				<li><a href="/"				class="normal px-2 link-primary">Inicio</a></li>
+				<li><a href="/juegos.php"	class="normal px-2">Juegos</a></li>
+				<li><a href="/blog.php"		class="normal px-2">Blog</a></li>
+				<li><a href="/faq.php"		class="normal px-2">FAQ</a></li>
+				<li><a href="/git.php"		class="normal px-2">Git</a></li>
+				<li><a href="/sobre_mi.php"	class="normal px-2">Sobre mí</a></li>
 			</ul>
 
 			<div class="col-md-3 text-end">
@@ -120,7 +122,8 @@ function pies()
 	Este sitio esta bajo licencia GNU-AGPL-v3, para mas detalles vaya a <a href="./licencia.php">./licencia.php</a>.
 	<br>
 	Esto es software libre, siéntase libre de redistribuirlo y modificarlo siempre y cuando <br> cumpla con las condiciones; mas detalles en <a href="./licencia.php#terms">./licencia#terms</a>.
-		</footer>
+	<p class="t-chiquito">Por el momento no he configurado el servidor para mostrar el repositorio pero si necesitas el codigo fuente puedes pedirmelo escribiendo a <a href="mailto:angel2600@proton.me">angel2600@proton.me</a></p>		
+</footer>
 	</section>
 </body>
 </html>
