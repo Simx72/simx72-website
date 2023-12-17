@@ -16,6 +16,7 @@
 
 
 
+@import "./tema"; // bootstrap styles; va al comienzo para que no sobreescriba otros estilos
 @import "./fonts";
 @import "./texto";
 @import "./estructura";

@@ -1,0 +1,40 @@
+/*
+ * File: <project root>/sass/_tema.scss
+ * Project: simx72-website
+ * File Created: Saturday, 16th December 2023 6:37:19 pm
+ * Author: Simx72 (angel2600@proton.me)
+ * -----
+ * Last Modified: Saturday, 16th December 2023 6:37:20 pm
+ * Modified By: Simx72 (angel2600@proton.me>)
+ * -----
+ * Copyright (C) 2023  Simx72
+ * This program is free software: you can redistribute it and/or modify
+ * it under the terms of the GNU Affero General Public License as published by
+ * the Free Software Foundation, either version 3 of the License, or
+ * any later version.
+ */
+
+$primary: #ffc107;
+$secondary: #808b94;
+$success: #24d884;
+$info: #0dcaf0;
+$warning: #fd450d;
+$danger: #dc3545;
+$light: #f8f9fa;
+$dark: #212529;
+
+
+
+$theme-colors: (
+  "primary":    $primary,
+  "secondary":  $secondary,
+  "success":    $success,
+  "info":       $info,
+  "warning":    $warning,
+  "danger":     $danger,
+  "light":      $light,
+  "dark":       $dark
+);
+
+
+@import "../node_modules/bootstrap/scss/bootstrap.scss";
