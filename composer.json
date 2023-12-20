@@ -16,6 +16,6 @@
         }
     ],
     "scripts": {
-        "post-package-install": ["php vendor/bin/pscss ./sass/index.scss ./build/css/index.css --sourcemap --style=expanded"]
+        "post-install-cmd": ["php vendor/bin/pscss ./sass/index.scss ./build/css/index.css --sourcemap --style=expanded"]
     }
 }
