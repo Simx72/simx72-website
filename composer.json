@@ -1,0 +1,18 @@
+{
+    "name": "simx72/simx72-website",
+    "description": "My own personal website, with a blog, games and tons of interesting things",
+    "type": "project",
+    "require": {
+        "delight-im/auth": "^8.3"
+    },
+    "require-dev": {
+        "scssphp/scssphp": "^1.12"
+    },
+    "license": "AGPL-v3",
+    "authors": [
+        {
+            "name": "Simx72",
+            "email": "angel2600@proton.me"
+        }
+    ]
+}
