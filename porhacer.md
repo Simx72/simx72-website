@@ -1,4 +1,5 @@
 Lo que me falta por hacer
 
-* Instalar composer y php auth
-* change npm project to composer project (manage dependencies easier)
+* ~~Instalar composer~~
+* ~~change npm project to composer project (manage dependencies easier)~~(actually I'm leaving node for development because I think it's faster)
+* auth
