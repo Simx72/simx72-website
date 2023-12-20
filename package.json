@@ -1,6 +1,6 @@
 {
   "scripts": {
-    "dev": "sass \"./sass/index.scss\":\"./build/css/index.css\" -w",
+    "dev": "sass \"./sass/index.scss\":\"./build/css/index.css\" -w"
   },
   "devDependencies": {
     "sass": "^1.69.5"
