@@ -7,3 +7,6 @@ node_modules/
 #server
 .htaccess
 .cpanel.yml
+
+#to build
+/build/css/
