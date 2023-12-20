@@ -14,5 +14,8 @@
             "name": "Simx72",
             "email": "angel2600@proton.me"
         }
-    ]
+    ],
+    "scripts": {
+        "post-package-install": ["php vendor/bin/pscss ./sass/index.scss ./build/css/index.css --sourcemap --style=expanded"]
+    }
 }
