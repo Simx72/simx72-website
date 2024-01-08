@@ -1,14 +1,11 @@
-#node
-node_modules/
-
-#composer
-/vendor/
-
 #server
 .htaccess
-vendor/
-/blog/
 .cpanel.yml
 
-#to build
-/build/css/
+# build
+/build/
+node_modules/
+vendor/
+
+# apps
+/blog/
