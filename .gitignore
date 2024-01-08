@@ -6,6 +6,8 @@ node_modules/
 
 #server
 .htaccess
+vendor/
+/blog/
 .cpanel.yml
 
 #to build
