@@ -11,7 +11,7 @@
                 "@author <<author>>",
                 "@link mailto:<<authoremail>>",
                 "@link http://sdesim.ca/",
-                "@license <<license>>",
+                "@license https://www.gnu.org/licenses/gpl-3.0.en.html",
                 "-----",
                 "Copyright (C) <<year>>  <<author>>",
                 "This program is free software: you can redistribute it and/or modify",
@@ -24,7 +24,6 @@
     "psi-header.config": {
         "author": "Simx72",
         "authorEmail": "angel2600@proton.me",
-        "license": "https://www.gnu.org/licenses/gpl-3.0.en.html",
         "blankLinesAfter": 3
     },
     "psi-header.changes-tracking": {
