@@ -19,7 +19,7 @@ $db;
 
 try {
     $db = new PDO($db_connect[0], $db_connect[1], $db_connect[2]);
-} catch (Exception $e) {
+} catch (Throwable $e) {
     header('HTTP/1.1 500 Internal Server Error', true, 500);
     echo("Something happened when connecting to the database, please contact the administrator of the site.");
     throw ($e);

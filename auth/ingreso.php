@@ -14,5 +14,28 @@
  * any later version.
  */
 
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../include/db.php';
 
 
+echo "hola\n\n";
+
+
+$ejemplo = $db->query("show databases;")->fetchAll();
+
+var_dump($ejemplo);
+
+try {
+    $config = new \PHPAuth\Config($db);
+    $auth   = new \PHPAuth\Auth($db, $config);
+    if (!$auth->isLogged()) {
+        header('HTTP/1.0 403 Forbidden');
+        echo "Forbidden prro, qui no puedes entrar";
+    
+        exit();
+    } else {
+        echo 'logged :)';
+    }
+} catch (\Throwable $th) {
+    throw $th;
+}
