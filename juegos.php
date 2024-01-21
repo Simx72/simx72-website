@@ -1,19 +1,20 @@
 <?php
 /*
- * File: <project root>/juegos.php
- * Project: simx72-website
- * File Created: Sunday, 17th December 2023 9:00:14 am
- * Author: Simx72 (angel2600@proton.me)
+ * Simx72 website
+ * 
+ * @author Simx72
+ * @link mailto:angel2600@proton.me
+ * @link http://sdesim.ca/
+ * @license https://www.gnu.org/licenses/gpl-3.0.en.html
  * -----
- * Last Modified: Sunday, 17th December 2023 9:00:17 am
- * Modified By: Simx72 (angel2600@proton.me>)
- * -----
- * Copyright (C) 2023  Simx72
+ * Copyright (C) 2024  Simx72
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
  */
+
+
 
 
 require "./include/template.php";

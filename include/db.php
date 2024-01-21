@@ -1,16 +1,19 @@
 <?php 
 /*
- * File: <project root>/include/db.php
- * Project: www
- * File Created: Wednesday, 20th December 2023 12:36:25 pm
- * Author: Simx72 (angel2600@proton.me)
+ * Simx72 website
+ * 
+ * @author Simx72
+ * @link mailto:angel2600@proton.me
+ * @link http://sdesim.ca/
+ * @license https://www.gnu.org/licenses/gpl-3.0.en.html
  * -----
- * Copyright (C) 2023  Simx72
+ * Copyright (C) 2024  Simx72
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
  */
+
 
 
 $db_connect = explode(" ", getenv('DB_CONNECT'));
