@@ -21,7 +21,7 @@ require_once __DIR__ . '/../include/db.php';
 echo "hola\n\n";
 
 
-$ejemplo = $db->query("show databases;")->fetchAll();
+$ejemplo = $db->query("show tables;")->fetchAll();
 
 var_dump($ejemplo);
 
