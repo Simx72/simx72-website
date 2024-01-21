@@ -17,7 +17,7 @@
 
 
 
-require './include/base.php';
+require './include/template.php';
 
 template_config("Créditos", __FILE__);
 

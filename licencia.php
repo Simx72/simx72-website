@@ -17,11 +17,11 @@
 
 
 
-require "./include/base.php";
+require "./include/template.php";
 
 template_config("Licencia", __FILE__);
 
-fullhead();
+head();
 ?>
 <style>
 

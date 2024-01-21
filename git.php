@@ -16,7 +16,7 @@
  */
 
 
-require "./include/base.php";
+require "./include/template.php";
 
 template_config("Git", __FILE__);
 
