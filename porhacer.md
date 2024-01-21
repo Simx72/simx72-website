@@ -5,3 +5,6 @@ Lo que me falta por hacer
     *(actually I'm leaving node for development because I think it's faster)*
     * ~~move bootstrap to composer~~
 * auth
+    * ~~Instalar phpauth https://github.com/PHPAuth/PHPAuth~~
+    * Configurar 'crear nuevo usuario'
+    * Configurar 'ingresar'
