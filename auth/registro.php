@@ -11,7 +11,7 @@
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
- * any later version.
+ * any later version.s
  */
 
 require_once __DIR__ . '/../include/auth.php';
@@ -24,7 +24,11 @@ require_once __DIR__ .'/../include/template.php';
 head();
 ?>
 
+<h1>Registrarse
+</h1>
+<form action="." method="post">
 
+</form>
 
 <?php
 pies();
