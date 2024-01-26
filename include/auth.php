@@ -14,17 +14,11 @@
  * any later version.
  */
 
-require_once __DIR__ . '/../include/auth.php';
-// require_once __DIR__ .'/../include/template.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../include/db.php';
+ 
+error_reporting(E_ALL);
+ini_set('display_errors', 'On');
 
-
-
-
-
-// head();
-?>
-
-hola
-
-<?php
-// pies();
+$config = new \PHPAuth\Config($db);
+$auth   = new \PHPAuth\Auth($db, $config);

@@ -15,16 +15,16 @@
  */
 
 require_once __DIR__ . '/../include/auth.php';
-// require_once __DIR__ .'/../include/template.php';
+require_once __DIR__ .'/../include/template.php';
+
+/* $auth-> */
 
 
 
-
-
-// head();
+head();
 ?>
 
-hola
+
 
 <?php
-// pies();
+pies();
