@@ -4,5 +4,8 @@
   },
   "devDependencies": {
     "sass": "^1.69.5"
+  },
+  "dependencies": {
+    "altcha": "^0.1.5"
   }
 }

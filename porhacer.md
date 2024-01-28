@@ -8,6 +8,7 @@ Lo que me falta por hacer
     * ~~Instalar phpauth https://github.com/PHPAuth/PHPAuth~~
     * Configurar 'crear nuevo usuario'
         1. Register
+            1. set up altcha (or try another captcha if easier) 
         2. Send emaile for activation
     * configurar activación de email 
     * Configurar 'ingresar'

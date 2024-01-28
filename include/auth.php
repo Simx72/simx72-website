@@ -16,9 +16,17 @@
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../include/db.php';
- 
+
 error_reporting(E_ALL);
 ini_set('display_errors', 'On');
 
+class AuthManager extends \PHPAuth\Auth
+{
+    function checkCaptcha(mixed $captcha) : bool
+    {
+        return true;
+    }
+}
+
 $config = new \PHPAuth\Config($db);
-$auth   = new \PHPAuth\Auth($db, $config);
+$auth = new \PHPAuth\Auth($db, $config);

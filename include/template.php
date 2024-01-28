@@ -63,6 +63,8 @@ function head()
 
 	<link rel="stylesheet" href="/build/css/index.css?<?php echo filemtime(dirname(__FILE__).'/../build/css/index.css'); ?>">
 
+	<script async defer src="/node_modules/altcha/dist/altcha.js" type="module"></script>
+
 	<title><?php echo $titulo." - ".$nom_sitio; ?></title>
 </head>
 <body>

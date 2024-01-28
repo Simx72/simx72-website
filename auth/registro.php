@@ -75,6 +75,12 @@ head();
                 </div>
 
 
+                <!-- Altcha -->
+                <altcha-widget
+                    challengeurl="{YOUR_SERVER_HERE}"
+                ></altcha-widget>
+
+
                 <!-- Enviar -->
                 <div class="mb-3">
                     <button
