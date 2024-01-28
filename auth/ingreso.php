@@ -15,16 +15,77 @@
  */
 
 require_once __DIR__ . '/../include/auth.php';
-// require_once __DIR__ .'/../include/template.php';
+require_once __DIR__ . '/../include/template.php';
+
+
+$titulo = "Ingreso";
 
 
 
 
 
-// head();
+
+head();
 ?>
 
-hola
+<!-- Tight container -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
+
+
+
+
+            <h1>Ingresar</h1>
+
+            <br />
+
+            <form action="." method="post">
+                <!-- Correo -->
+                <div class="mb-3">
+                    <label for="correo-e" class="form-label">Correo</label>
+                    <input type="text" class="form-control" name="correo-e" id="correo-e"
+                        aria-describedby="helpId-correo-e" placeholder="Correo ..." required />
+                </div>
+
+
+                <!-- Clave -->
+                <div class="mb-3">
+                    <label for="clave" class="form-label">Clave</label>
+                    <input type="text" class="form-control" name="clave" id="clave" aria-describedby="helpId-clave"
+                        placeholder="Clave..." required />
+                </div>
+                <br>
+
+
+                <!-- Enviar -->
+                <div class="mb-3">
+                    <button type="submit" class="btn btn-primary w-100">
+                        Enviar
+                    </button>
+                </div>
+
+                <div class="mb-3 text-center">
+                    <small>
+                        <a href="./registro.php">
+                            Aún no tengo una cuenta
+                        </a>
+                    </small>
+                </div>
+
+
+
+            </form>
+
+
+
+
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
 
 <?php
-// pies();
+pies();
