@@ -15,7 +15,7 @@
  */
 
 require_once __DIR__ . '/../include/auth.php';
-require_once __DIR__ .'/../include/template.php';
+require_once __DIR__ . '/../include/template.php';
 
 /* $auth-> */
 
@@ -24,11 +24,36 @@ require_once __DIR__ .'/../include/template.php';
 head();
 ?>
 
-<h1>Registrarse
-</h1>
-<form action="." method="post">
+<!-- Tight container -->
+<div class="container">
+    <div class="row">
+        <div class="col-md-4"></div>
+        <div class="col-md-4">
 
-</form>
+
+
+
+            <h1>Registrarse</h1>
+
+            <br>
+
+            <form action="." method="post">
+                <div class="mb-3">
+                    <label for="" class="form-label">Correo</label>
+                    <input type="text" class="form-control" name="correo-e" id="correo-e"
+                        aria-describedby="helpId-correo-e" placeholder="Ej: pepitoperez@ejemplo.com" />
+                    <small id="helpId-correo-e" class="form-text text-muted">Help text</small>
+                </div>
+            </form>
+
+
+
+
+
+        </div>
+        <div class="col-md-4"></div>
+    </div>
+</div>
 
 <?php
 pies();
