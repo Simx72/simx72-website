@@ -25,40 +25,51 @@ $titulo = "Registro";
 $e_message = "";
 
 
+var_dump($_POST);
 
-if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2"])) {
+// if (attempting to register)
+if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2"]) && isset($_POST["altcha"])) {
+    $correo = $_POST["correo-e"]; $clave = $_POST["clave"]; $clave2 = $_POST["clave-2"]; $altcha = $_POST["altcha"];
 
-    $auth->register($_POST["correo"], $_POST["clave"], $_POST["clave-2"], [], '', true);
+    $block_status = $auth->isBlocked();
 
-}
+    var_dump($block_status); // @return 'allow'
 
+    // $auth->checkSession($auth->getCurrentSessionHash());
 
-head();
-?>
+    // $auth->checkCaptcha($altcha);
+
+    // $auth->register($_POST["correo-e"], $_POST["clave"], $_POST["clave-2"], [], '', true);
+
+} else { // if (not registering)
+
+    
+    head();
+    ?>
 
 <!-- Tight container -->
 <div class="container">
     <div class="row">
         <div class="col-md-4"></div>
         <div class="col-md-4">
-
-
-
-
+            
+            
+            
+            
             <h1>Registrarse</h1>
-
+            
             <br/>
-
-            <form action="." method="post">
+            
+            <form action="registro.php" method="post">
                 <!-- Correo -->
                 <div class="mb-3">
                     <label for="correo-e" class="form-label">Correo</label>
                     <input type="text" class="form-control" name="correo-e" id="correo-e"
-                        aria-describedby="helpId-correo-e" placeholder="Ej: pepitoperez@ejemplo.com" required />
+                    aria-describedby="helpId-correo-e" placeholder="Ej: pepitoperez@ejemplo.com" required />
                     <small id="helpId-correo-e" class="form-text text-info">Ingrese aquí el correo que va a estar asociado a su cuenta</small>
                 </div>
-
-
+                
+                
                 <!-- Clave -->
                 <div class="mb-3">
                     <label for="clave" class="form-label">Nueva clave</label>
@@ -73,44 +84,52 @@ head();
                     aria-describedby="helpId-clave" placeholder="Clave..." required />
                     <small id="helpId-clave" class="form-text text-info">Escriba la clave de nuevo</small>
                 </div>
-
-
+                
+                
                 <!-- Altcha -->
                 <altcha-widget
-                    challengeurl="{YOUR_SERVER_HERE}"
+                challengeurl="./challenge.php"
                 ></altcha-widget>
-
-
+                <br>
+                
+                
                 <!-- Enviar -->
                 <div class="mb-3">
                     <button
-                        type="submit"
-                        class="btn btn-primary w-100"
+                    type="submit"
+                    class="btn btn-primary w-100"
                     >
-                        Enviar
-                    </button>
-                </div>
-
-                <div class="mb-3 text-center">
-                    <small>
-                        <a href="./ingreso.php">
-                            Ya tengo una cuenta
-                        </a>
-                    </small>
-                </div>
-
-
-
-            </form>
-
-
-
-
-
-        </div>
-        <div class="col-md-4"></div>
+                    Enviar
+                </button>
+            </div>
+            
+            <div class="mb-3 text-center">
+                <small>
+                    <a href="./ingreso.php">
+                        Ya tengo una cuenta
+                    </a>
+                </small>
+            </div>
+            
+            
+            
+        </form>
+        
+        <br>
+        
+        <?php var_dump($_POST); ?>
+        
+        
+        
+        
+        
     </div>
+    <div class="col-md-4"></div>
+</div>
 </div>
 
 <?php
 pies();
+
+
+} // endif

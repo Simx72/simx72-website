@@ -24,9 +24,10 @@ class AuthManager extends \PHPAuth\Auth
 {
     function checkCaptcha(mixed $captcha) : bool
     {
+        // var_dump($captcha);
         return true;
     }
 }
 
 $config = new \PHPAuth\Config($db);
-$auth = new \PHPAuth\Auth($db, $config);
+$auth = new AuthManager($db, $config);
