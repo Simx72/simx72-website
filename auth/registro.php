@@ -24,22 +24,25 @@ $titulo = "Registro";
 
 $e_message = "";
 
-
 var_dump($_POST);
+
 
 // if (attempting to register)
 if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2"]) && isset($_POST["altcha"])) {
     $correo = $_POST["correo-e"]; $clave = $_POST["clave"]; $clave2 = $_POST["clave-2"]; $altcha = $_POST["altcha"];
 
-    $block_status = $auth->isBlocked();
+    // $block_status = $auth->isBlocked();
 
-    var_dump($block_status); // @return 'allow'
+    // var_dump($block_status); // @return 'allow'
 
     // $auth->checkSession($auth->getCurrentSessionHash());
 
     // $auth->checkCaptcha($altcha);
 
-    // $auth->register($_POST["correo-e"], $_POST["clave"], $_POST["clave-2"], [], '', true);
+    $result = $auth->register($_POST["correo-e"], $_POST["clave"], $_POST["clave-2"], [], '', true);
+
+
+    var_dump($result);
 
 } else { // if (not registering)
 
@@ -86,11 +89,11 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
                 </div>
                 
                 
-                <!-- Altcha -->
-                <altcha-widget
+                <?php /* <!-- Altcha -->
+                <!-- <altcha-widget
                 challengeurl="./challenge.php"
                 ></altcha-widget>
-                <br>
+                <br> --> */ ?>
                 
                 
                 <!-- Enviar -->
