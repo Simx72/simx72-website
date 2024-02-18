@@ -16,6 +16,7 @@
 
 require_once __DIR__ . '/../include/auth.php';
 require_once __DIR__ . '/../include/template.php';
+require_once __DIR__ . '/../vendor/phpmailer/phpmailer/src/PHPMailer.php';
 
 /* $auth-> */
 
@@ -26,6 +27,7 @@ $e_message = "";
 
 var_dump($_POST);
 
+echo "\t  \n";
 
 // if (attempting to register)
 if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2"]) && isset($_POST["altcha"])) {
@@ -41,8 +43,7 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
 
     $result = $auth->register($_POST["correo-e"], $_POST["clave"], $_POST["clave-2"], [], '', true);
 
-
-    var_dump($result);
+    var_dump("Heloo");
 
 } else { // if (not registering)
 
