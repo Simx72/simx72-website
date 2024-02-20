@@ -26,14 +26,5 @@ if (isset($env["MODE"])) {
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../include/db.php';
 
-class AuthManager extends \PHPAuth\Auth
-{
-	function checkCaptcha(mixed $captcha) : bool
-	{
-		// var_dump($captcha);
-		return true;
-	}
-}
+use Auth\Core\Authentication as Auth;
 
-$config = new \PHPAuth\Config($db);
-$auth = new AuthManager($db, $config);
