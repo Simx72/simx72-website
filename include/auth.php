@@ -14,19 +14,25 @@
  * any later version.
  */
 
+require_once "env.php";
+
+if (isset($env["MODE"])) {
+	if ($env["MODE"] == "development") {
+		error_reporting(E_ALL);
+		ini_set('display_errors', 'On');
+	}
+}
+
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../include/db.php';
 
-error_reporting(E_ALL);
-ini_set('display_errors', 'On');
-
 class AuthManager extends \PHPAuth\Auth
 {
-    function checkCaptcha(mixed $captcha) : bool
-    {
-        // var_dump($captcha);
-        return true;
-    }
+	function checkCaptcha(mixed $captcha) : bool
+	{
+		// var_dump($captcha);
+		return true;
+	}
 }
 
 $config = new \PHPAuth\Config($db);

@@ -15,9 +15,9 @@
  */
 
 
-include_once __DIR__ . "/./env.php";
+require_once "env.php";
 
-$db_connect = explode(" ", $env('DB_CONNECT'));
+$db_connect = explode(" ", $env['DB_CONNECT']);
 
 $db;
 
