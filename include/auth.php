@@ -14,7 +14,7 @@
  * any later version.
  */
 
-require_once "env.php";
+require_once __DIR__ . "/./env.php";
 
 if (isset($env["MODE"])) {
 	if ($env["MODE"] == "development") {
@@ -25,6 +25,7 @@ if (isset($env["MODE"])) {
 
 require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../include/db.php';
+require_once __DIR__ . '/../include/mailer.php';
 
-use Auth\Core\Authentication as Auth;
 
+$auth = new \Delight\Auth\Auth($db);

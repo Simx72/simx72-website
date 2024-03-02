@@ -4,7 +4,8 @@
     "type": "project",
     "require": {
         "twbs/bootstrap": "5.3.2",
-        "delight-im/auth": "^8.3"
+        "delight-im/auth": "^8.3",
+        "phpmailer/phpmailer": "^6.9"
     },
     "require-dev": {
         "scssphp/scssphp": "^1.12"

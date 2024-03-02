@@ -30,4 +30,33 @@ try {
 }
 
 
+function getConfigKey(string $key) {
+    global $db;
 
+    $sql="SELECT value FROM php_auth.config_table WHERE `key` = :key";
+
+    $query = $db->prepare($sql);
+
+    $query->bindValue("key", $key, PDO::PARAM_STR);
+
+    $query->execute();
+
+    $res = $query->fetch();
+
+    return $res["value"];
+
+}
+
+function getSMTPConfig() {
+    global $db;
+
+    $sql="SELECT `key`, `value` FROM config_table WHERE `key` LIKE 'smtp%';";
+
+    $query = $db->prepare($sql);
+
+    $query->execute();
+
+    $res = $query->fetchAll(PDO::FETCH_COLUMN|PDO::FETCH_GROUP);
+
+    return $res;
+}

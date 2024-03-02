@@ -14,34 +14,50 @@
  * any later version.s
  */
 
+
 require_once __DIR__ . '/../include/auth.php';
 require_once __DIR__ . '/../include/template.php';
-require_once __DIR__ . '/../vendor/phpmailer/phpmailer/src/PHPMailer.php';
 
 /* $auth-> */
 
 $titulo = "Registro";
 
 
-$e_message = "";
-
-var_dump($_POST);
+$saca_error = "";
 
 echo "\t  \n";
 
 // if (attempting to register)
-if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2"]) && isset($_POST["altcha"])) {
-    $correo = $_POST["correo-e"]; $clave = $_POST["clave"]; $clave2 = $_POST["clave-2"]; $altcha = $_POST["altcha"];
-
-    // $block_status = $auth->isBlocked();
-
-    // var_dump($block_status); // @return 'allow'
-
-    // $auth->checkSession($auth->getCurrentSessionHash());
-
-    // $auth->checkCaptcha($altcha);
-
-    $result = $auth->register($_POST["correo-e"], $_POST["clave"], $_POST["clave-2"], [], '', true);
+if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2"]) && isset($_POST["apodo"])) {
+    $correo = $_POST["correo-e"]; $clave = $_POST["clave"]; $clave2 = $_POST["clave-2"]; $apodo = $_POST["apodo"];
+    
+    
+    try {
+        if ($clave != $clave2) {
+            $saca_error = "Las claves no coinciden. Inténtelo de nuevo";
+            throw new Exception("Las claves no coinciden");
+        }
+        $userId = $auth->register($correo, $clave, $apodo, function ($selector, $token) {
+            // mail("noreply@sdesim.ca", "Asunto", "Holaa");
+            echo 'Send ' . $selector . ' and ' . $token . ' to the user (e.g. via email)';
+            echo '  For emails, consider using the mail(...) function, Symfony Mailer, Swiftmailer, PHPMailer, etc.';
+            echo '  For SMS, consider using a third-party service and a compatible SDK';
+        });
+    
+        echo 'We have signed up a new user with the ID ' . $userId;
+    }
+    catch (\Delight\Auth\InvalidEmailException $e) {
+        $saca_error = 'Invalid email address';
+    }
+    catch (\Delight\Auth\InvalidPasswordException $e) {
+        $saca_error = 'Invalid password';
+    }
+    catch (\Delight\Auth\UserAlreadyExistsException $e) {
+        $saca_error = 'User already exists';
+    }
+    catch (\Delight\Auth\TooManyRequestsException $e) {
+        $saca_error = 'Too many requests';
+    }
 
     var_dump("Heloo");
 
@@ -73,9 +89,18 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
                     <small id="helpId-correo-e" class="form-text text-info">Ingrese aquí el correo que va a estar asociado a su cuenta</small>
                 </div>
                 
+                <!-- Apodo -->
+                <div class="mb-3">
+                    <label for="apodo" class="form-label">Apodo</label>
+                    <input type="text" class="form-control" name="apodo" id="apodo"
+                    aria-describedby="helpId-apodo" placeholder="Ej: pepito21" required />
+                    <small id="helpId-apodo" class="form-text text-info">Como la gente te va a llamar</small>
+                </div>
+                <br><br>
+                
                 
                 <!-- Clave -->
-                <div class="mb-3">
+                <div class="mb-1">
                     <label for="clave" class="form-label">Nueva clave</label>
                     <input type="text" class="form-control" name="clave" id="clave"
                     aria-describedby="helpId-clave" placeholder="Clave..." required />
@@ -88,6 +113,8 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
                     aria-describedby="helpId-clave" placeholder="Clave..." required />
                     <small id="helpId-clave" class="form-text text-info">Escriba la clave de nuevo</small>
                 </div>
+
+                <br><br>
                 
                 
                 <?php /* <!-- Altcha -->
