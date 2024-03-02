@@ -33,7 +33,7 @@ function sendmail(array $recipients, string $subject, string $message, $attachme
     try {
         //Server settings
         $mail = new PHPMailer();
-        $mail->SMTPDebug = SMTP::DEBUG_SERVER;
+        // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->isSMTP();
         $smtp = getSMTPConfig();
         // var_dump($smtp);
@@ -69,6 +69,5 @@ function sendmail(array $recipients, string $subject, string $message, $attachme
     }
 }
 
-sendmail(array("angel2600@proton.me"), "asunto", "texto");
 
 // $mailer = new PHPMailer();
