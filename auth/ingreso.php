@@ -21,28 +21,41 @@ require_once __DIR__ . '/../include/template.php';
 $titulo = "Ingreso";
 
 
+$saca_error = "";
+
+if ($auth->isLoggedIn()) {
+    header('Location: ./cuenta.php');
+    die;
+}
+
 
 if (isset($_POST["correo-e"]) && isset($_POST["clave"])) {
     $correo = $_POST["correo-e"]; $clave = $_POST["clave"];
     
-    
     try {
         $auth->login($_POST['correo-e'], $_POST['clave']);
         head();
-        echo '<div class="container">Ingreso exitoso</div>';
+        ?>
+        <div class="container">
+            <p>Ingreso exitoso</p>
+            <p>
+                Ir a <a href="./cuenta.php">mi cuenta</a>.
+            </p>
+        </div>
+        <?php
         pies();
     }
     catch (\Delight\Auth\InvalidEmailException $e) {
-        die('Wrong email address');
+        $saca_error = 'Wrong email address';
     }
     catch (\Delight\Auth\InvalidPasswordException $e) {
-        die('Wrong password');
+        $saca_error = 'Wrong password';
     }
     catch (\Delight\Auth\EmailNotVerifiedException $e) {
-        die('Email not verified');
+        $saca_error = 'Email not verified';
     }
     catch (\Delight\Auth\TooManyRequestsException $e) {
-        die('Too many requests');
+        $saca_error = 'Too many requests';
     }
         
 

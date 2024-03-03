@@ -17,15 +17,38 @@
 require_once __DIR__ . '/../include/auth.php';
 require_once __DIR__ . '/../include/template.php';
 
+head();
 
-if ($auth->isLogged()) {
-    head();
-    echo 'Bienvenido '. $auth->getUser($auth->getCurrentUID());
-    pies();
-} else {
+if (!$auth->isLoggedIn()) {
     ?>
-    Primer necesitas ingresar con tus credenciales. Para hacerlo ve a <a href="/auth/ingreso.php">Ingreso</a>.
+    <div class="container">
+        Primer necesitas ingresar con tus credenciales. Para hacerlo ve a <a href="/auth/ingreso.php">Ingreso</a>.
+    </div>
     <?php
+    pies();
+    die;
 }
+
+?>
+
+
+<div class="container">
+    <p>
+        Bienvenido <?php echo $auth->getUsername(); ?>
+    </p>
+
+    <div>
+        <a href="./cerrar_sesion.php">Cerrar sesión</a>
+    </div>
+
+</div>
+
+
+
+
+
+<?php
+
+pies();
 
 
