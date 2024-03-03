@@ -22,6 +22,37 @@ $titulo = "Ingreso";
 
 
 
+if (isset($_POST["correo-e"]) && isset($_POST["clave"])) {
+    $correo = $_POST["correo-e"]; $clave = $_POST["clave"];
+    
+    
+    try {
+        $auth->login($_POST['correo-e'], $_POST['clave']);
+        head();
+        echo '<div class="container">Ingreso exitoso</div>';
+        pies();
+    }
+    catch (\Delight\Auth\InvalidEmailException $e) {
+        die('Wrong email address');
+    }
+    catch (\Delight\Auth\InvalidPasswordException $e) {
+        die('Wrong password');
+    }
+    catch (\Delight\Auth\EmailNotVerifiedException $e) {
+        die('Email not verified');
+    }
+    catch (\Delight\Auth\TooManyRequestsException $e) {
+        die('Too many requests');
+    }
+        
+
+    if ($saca_error != "") {
+        head();
+        alerta_error($saca_error, "ingreso.php");
+        pies();
+    }
+
+} else {
 
 
 
@@ -41,7 +72,7 @@ head();
 
             <br />
 
-            <form action="." method="post">
+            <form action="ingreso.php" method="post">
                 <!-- Correo -->
                 <div class="mb-3">
                     <label for="correo-e" class="form-label">Correo</label>
@@ -53,7 +84,7 @@ head();
                 <!-- Clave -->
                 <div class="mb-3">
                     <label for="clave" class="form-label">Clave</label>
-                    <input type="text" class="form-control" name="clave" id="clave" aria-describedby="helpId-clave"
+                    <input type="password" class="form-control" name="clave" id="clave" aria-describedby="helpId-clave"
                         placeholder="Clave..." required />
                 </div>
                 <br>
@@ -89,3 +120,5 @@ head();
 
 <?php
 pies();
+
+}

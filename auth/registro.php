@@ -35,16 +35,33 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
     try {
         if ($clave != $clave2) {
             $saca_error = "Las claves no coinciden. Inténtelo de nuevo";
-            throw new Exception("Las claves no coinciden");
+            throw new Exception("Passwords don't match");
         }
+        if (\preg_match('/[\x00-\x1f\x7f\/:\\\\]/', $apodo) != 0) {
+            $saca_error = "El usuario contiene caracteres no válidos";
+            throw new Exception("Not allowed characters");
+        }
+        $site_config = getSiteConfig();
+        // var_dump($site_config);
         $userId = $auth->register($correo, $clave, $apodo, function ($selector, $token) {
-            // mail("noreply@sdesim.ca", "Asunto", "Holaa");
-            echo 'Send ' . $selector . ' and ' . $token . ' to the user (e.g. via email)';
-            echo '  For emails, consider using the mail(...) function, Symfony Mailer, Swiftmailer, PHPMailer, etc.';
-            echo '  For SMS, consider using a third-party service and a compatible SDK';
+            global $correo, $site_config;
+            $hostname = $site_config['site_hostname'][0];
+            $sitename = $site_config['site_name'][0];
+            $url = 'https://'.$hostname.'/auth/activar.php?selector=' . \urlencode($selector) . '&token=' . \urlencode($token);
+            $imgurl = "https://$hostname/favicon.png";
+            sendmail(array($correo), "Activa tu cuenta de $sitename", "
+<h1>$sitename – Activar cuenta</h1>
+<p>Para activar tu cuenta, entra al enlace a continuación:</p>
+<p><a href=\"$url\">$url</a></p>
+<p>Si no pediste esto, haz caso omiso a este correo.</p>
+<p><img src=\"$imgurl\" alt=\"Logotipo de $sitename\" width=\"100\" height=\"100\" /></p>
+            ");
         });
-    
-        echo 'We have signed up a new user with the ID ' . $userId;
+        
+        head();
+        echo "<div class=\"container\">Bien, ahora revisa tu correo $correo para activar tu cuenta</div>";
+        pies();
+
     }
     catch (\Delight\Auth\InvalidEmailException $e) {
         $saca_error = 'Invalid email address';
@@ -59,7 +76,11 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
         $saca_error = 'Too many requests';
     }
 
-    var_dump("Heloo");
+    if ($saca_error != "") {
+        head();
+        alerta_error($saca_error, "registro.php");
+        pies();
+    }
 
 } else { // if (not registering)
 
@@ -84,7 +105,7 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
                 <!-- Correo -->
                 <div class="mb-3">
                     <label for="correo-e" class="form-label">Correo</label>
-                    <input type="text" class="form-control" name="correo-e" id="correo-e"
+                    <input type="email" class="form-control" name="correo-e" id="correo-e"
                     aria-describedby="helpId-correo-e" placeholder="Ej: pepitoperez@ejemplo.com" required />
                     <small id="helpId-correo-e" class="form-text text-info">Ingrese aquí el correo que va a estar asociado a su cuenta</small>
                 </div>
@@ -102,14 +123,14 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
                 <!-- Clave -->
                 <div class="mb-1">
                     <label for="clave" class="form-label">Nueva clave</label>
-                    <input type="text" class="form-control" name="clave" id="clave"
+                    <input type="password" class="form-control" name="clave" id="clave"
                     aria-describedby="helpId-clave" placeholder="Clave..." required />
                     <small id="helpId-clave" class="form-text text-info">Esta será la clave de su cuenta. Asegúrese de que sea segura y utilice al menos 1 número, 1 letra mayúscula y 1 carácter especial</small>
                 </div>
                 <div class="mb-3">
                     <br>
                     <label for="clave-2" class="form-label">Nueva clave otra vez</label>
-                    <input type="text" class="form-control" name="clave-2" id="clave-2"
+                    <input type="password" class="form-control" name="clave-2" id="clave-2"
                     aria-describedby="helpId-clave" placeholder="Clave..." required />
                     <small id="helpId-clave" class="form-text text-info">Escriba la clave de nuevo</small>
                 </div>
@@ -148,7 +169,7 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
         
         <br>
         
-        <?php var_dump($_POST); ?>
+        <?php // var_dump($_POST); ?>
         
         
         

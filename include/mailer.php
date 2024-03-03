@@ -35,6 +35,7 @@ function sendmail(array $recipients, string $subject, string $message, $attachme
         $mail = new PHPMailer();
         // $mail->SMTPDebug = SMTP::DEBUG_SERVER;
         $mail->isSMTP();
+        $mail->CharSet = "UTF-8";
         $smtp = getSMTPConfig();
         // var_dump($smtp);
         $mail->Host = $smtp['smtp_host'][0];              //Set the SMTP server to send through

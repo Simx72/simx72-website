@@ -60,3 +60,17 @@ function getSMTPConfig() {
 
     return $res;
 }
+
+function getSiteConfig() {
+    global $db;
+
+    $sql="SELECT `key`, `value` FROM config_table WHERE `key` LIKE 'site%';";
+
+    $query = $db->prepare($sql);
+
+    $query->execute();
+
+    $res = $query->fetchAll(PDO::FETCH_COLUMN|PDO::FETCH_GROUP);
+
+    return $res;
+}
