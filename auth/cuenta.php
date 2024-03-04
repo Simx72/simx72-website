@@ -17,6 +17,9 @@
 require_once __DIR__ . '/../include/auth.php';
 require_once __DIR__ . '/../include/template.php';
 
+
+$titulo = 'Mi cuenta';
+
 head();
 
 if (!$auth->isLoggedIn()) {

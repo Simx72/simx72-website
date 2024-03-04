@@ -14,7 +14,7 @@
  * any later version.
  */
 
-
+require_once 'auth.php';
 
 $titulo = "[Título]";
 $nom_sitio = "sdesim.ca";
@@ -77,6 +77,7 @@ function head()
 
 function myheader()
 {
+	global $auth;
 	?>
 	<div class="text-bg-dark border-bottom">
 		<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-around py-3">
@@ -98,7 +99,18 @@ function myheader()
 
 			<div class="col-md-3 text-end">
 				<a href="/auth/ingreso.php">
-					<button type="button" class="btn btn-outline-primary me-2">Cuenta</button>
+					<button type="button" class="btn btn-outline-primary me-2">
+						<?php
+						if (!$auth->isLoggedIn()) {
+							echo 'Cuenta';
+						} else {
+							?>
+								<img class="img-de-perfil" src="/auth/img-cuenta.php" alt="Imagen de perfil de la cuenta">
+								<span><?php echo substr($auth->getUsername(), 0, 10); ?></span>
+							<?php
+						}
+						?>
+					</button>
 				</a>
 			</div>
 

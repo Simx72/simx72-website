@@ -36,4 +36,10 @@
     animation: heartbeat infinite 1600ms ease-out;
 }
 
-
+header .img-de-perfil {
+    $size: 2em;
+    width: $size;
+    height: $size;
+    aspect-ratio: 1;
+    border-radius: 100%;
+}
