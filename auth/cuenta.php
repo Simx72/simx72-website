@@ -25,7 +25,7 @@ head();
 if (!$auth->isLoggedIn()) {
 	?>
 	<div class="container">
-		Primer necesitas ingresar con tus credenciales. Para hacerlo ve a <a href="/auth/ingreso.php">Ingreso</a>.
+		Primer necesitas autenticarte. Para hacerlo ve a <a href="/auth/ingreso.php">Ingreso</a>.
 	</div>
 	<?php
 	pies();
@@ -59,6 +59,7 @@ if (!$auth->isLoggedIn()) {
 							<i class="bi bi-arrow-repeat"></i>
 						</button>
 					</div>
+					<p>Only jpeg and png allowed.</p>
 				</form>
 
 			</div>
