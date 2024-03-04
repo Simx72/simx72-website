@@ -36,7 +36,8 @@ if (!$auth->isLoggedIn()) {
 
 
 <div class="container">
-
+	<h1 class="text-center">Mi cuenta</h1>
+	<br>
 	<div class="row justify-content-around w-100">
 		<div class="col-md-1"></div>
 		<div class="col-md-4">
