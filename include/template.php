@@ -105,7 +105,7 @@ function myheader()
 							echo 'Cuenta';
 						} else {
 							?>
-								<img class="img-de-perfil" src="/auth/img-cuenta.php" alt="Imagen de perfil de la cuenta">
+								<img class="img-de-perfil" src="/auth/img-cuenta.php?accion=defecto" alt="Imagen de perfil de la cuenta">
 								<span><?php echo substr($auth->getUsername(), 0, 10); ?></span>
 							<?php
 						}

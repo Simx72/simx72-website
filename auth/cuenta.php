@@ -23,26 +23,56 @@ $titulo = 'Mi cuenta';
 head();
 
 if (!$auth->isLoggedIn()) {
-    ?>
-    <div class="container">
-        Primer necesitas ingresar con tus credenciales. Para hacerlo ve a <a href="/auth/ingreso.php">Ingreso</a>.
-    </div>
-    <?php
-    pies();
-    die;
+	?>
+	<div class="container">
+		Primer necesitas ingresar con tus credenciales. Para hacerlo ve a <a href="/auth/ingreso.php">Ingreso</a>.
+	</div>
+	<?php
+	pies();
+	die;
 }
 
 ?>
 
 
 <div class="container">
-    <p>
-        Bienvenido <?php echo $auth->getUsername(); ?>
-    </p>
+	<p>
+		Bienvenido
+		<?php echo $auth->getUsername(); ?>
+	</p>
 
-    <div>
-        <a href="./cerrar_sesion.php">Cerrar sesión</a>
-    </div>
+	<div class="row justify-content-around w-100">
+		<div class="col-md-1"></div>
+		<div class="col-md-4">
+			<div class="bloque">
+				<img class="img-de-perfil rounded-circle" src="./img-cuenta.php?accion=defecto"
+					alt="Imagen de perfil de <?php echo $auth->getUsername(); ?>" />
+				<br>
+				<form action="./img-cuenta.php?accion=cambiar" method="post" enctype="multipart/form-data">
+					<input type="file" style="visibility:hidden;" id="imagen-perfil" name="imagen" aria-label="Cambiar imagen">
+					<div class="input-group mb-3">
+						<label class="btn btn-secondary" for="imagen-perfil">
+							Elegir imagen
+						</label>
+						<button class="btn btn-primary" type="submit" id="subir-imagen-perfil">
+							Cambiar
+							<i class="bi bi-arrow-repeat"></i>
+						</button>
+					</div>
+				</form>
+
+			</div>
+		</div>
+		<div class="col-md-1"></div>
+		<div class="col-md-6">
+			<div class="bloque">
+			</div>
+		</div>
+	</div>
+
+	<div>
+		<a href="./cerrar_sesion.php">Cerrar sesión</a>
+	</div>
 
 </div>
 
