@@ -59,8 +59,10 @@ if (!$auth->isLoggedIn()) {
 							<i class="bi bi-arrow-repeat"></i>
 						</button>
 					</div>
-					<p>Only jpeg and png allowed.</p>
 				</form>
+				<div class="w-100 text-center nodis">
+					formato: jpeg o png
+				</div>
 
 			</div>
 		</div>
