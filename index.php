@@ -23,11 +23,14 @@ template_config("Inicio", __FILE__);
 head();
 
 ?>
-	
-    <div class="bloque">
-		Bienvenido al inicio. <br>
-		Aún no hay nada pero algún día habrá algo. <br>
-		Hasta la próxima...
+	<div class="container">
+		<div class="row justify-content-center">
+			<div class="bloque">
+				Bienvenido al inicio. <br>
+				Aún no hay nada pero algún día habrá algo. <br>
+				Hasta la próxima...
+			</div>
+		</div>
 	</div>
     
 <?php
