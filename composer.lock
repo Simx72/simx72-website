@@ -4,7 +4,7 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ed02a027cc45da3c83038c1ee419beed",
+    "content-hash": "ab3396a43b45ce67a5027fed4eb08902",
     "packages": [
         {
             "name": "delight-im/auth",
@@ -225,6 +225,15 @@
                 "source": "https://github.com/delight-im/PHP-HTTP/tree/v2.1.0"
             },
             "time": "2021-10-12T18:52:29+00:00"
+        },
+        {
+            "name": "firacode/firacode",
+            "version": "6.2",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip"
+            },
+            "type": "library"
         },
         {
             "name": "phpmailer/phpmailer",
