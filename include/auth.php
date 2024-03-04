@@ -27,5 +27,18 @@ require_once __DIR__ . '/../vendor/autoload.php';
 require_once __DIR__ . '/../include/db.php';
 require_once __DIR__ . '/../include/mailer.php';
 
-
 $auth = new \Delight\Auth\Auth($db);
+
+function validar_altcha(string $payload): bool
+{
+	$json = json_decode(base64_decode($payload), true);
+
+	if ($json !== null) {
+		$check = crear_challenge($json['salt'], $json['number']);
+
+		return $json['algorithm'] === $check['algorithm']
+			&& $json['challenge'] === $check['challenge']
+			&& $json['signature'] === $check['signature'];
+	}
+	return false;
+}

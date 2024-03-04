@@ -28,11 +28,13 @@ $saca_error = "";
 echo "\t  \n";
 
 // if (attempting to register)
-if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2"]) && isset($_POST["apodo"])) {
-    $correo = $_POST["correo-e"]; $clave = $_POST["clave"]; $clave2 = $_POST["clave-2"]; $apodo = $_POST["apodo"];
-    
-    
+if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2"]) && isset($_POST["apodo"]) && isset($_POST['altcha'])) {
+    $correo = $_POST["correo-e"]; $clave = $_POST["clave"]; $clave2 = $_POST["clave-2"]; $apodo = $_POST["apodo"]; $altcha = $_POST['$altcha'];
     try {
+        if (validar_altcha($altcha)) {
+            $saca_error = "Altcha inválido";
+            throw new Exception("Altcha could not be verified");
+        }
         if ($clave != $clave2) {
             $saca_error = "Las claves no coinciden. Inténtelo de nuevo";
             throw new Exception("Passwords don't match");
@@ -138,11 +140,9 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
                 <br><br>
                 
                 
-                <?php /* <!-- Altcha -->
-                <!-- <altcha-widget
-                challengeurl="./challenge.php"
-                ></altcha-widget>
-                <br> --> */ ?>
+                <!-- Altcha -->
+                <altcha-widget challengeurl="./challenge.php"></altcha-widget>
+                <br> 
                 
                 
                 <!-- Enviar -->

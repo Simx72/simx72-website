@@ -1,4 +1,4 @@
-<?php 
+<?php
 /*
  * Simx72 website
  * 
@@ -13,60 +13,34 @@
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
  */
+//
 
-header("Content-Type: application/json");
+require_once __DIR__ . '../include/env.php';
 
-// echo "hola\n";
-
-// error_reporting(E_ALL);
-// ini_set('display_errors', 'On');
-
-// function random_str(
-//     int $length = 64,
-//     string $keyspace = '0123456789abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ!@#$%^&*(){}'
-// ): string {
-//     if ($length < 1) {
-//         throw new \RangeException("Length must be a positive integer");
-//     }
-//     $pieces = [];
-//     $max = mb_strlen($keyspace, '8bit') - 1;
-//     for ($i = 0; $i < $length; ++$i) {
-//         $pieces []= $keyspace[random_int(0, $max)];
-//     }
-//     return implode('', $pieces);
-// }
-
-
-// echo "Doing salt\n";
-// Generate a random salt (recommended length: at least 10 characters)
-$salt = "abcdefg123";
-
-// echo "Doing secret_number\n";
-// Generate a random secret number (positive integer)
-// Range depends on the chosen complexity (refer to documentation)
-// Ensure NOT to expose this number to the client
-$secret_number = 143;// random_int(0, 9999);
-
-// echo "Doing challenge\n";
-// Compute the SHA256 hash of the concatenated salt + secret_number (result encoded as HEX string)
-$challenge = hash("sha256", $salt.$secret_number, false);
-
-
-// estaba cambiando el codigo del altcha en codigo php
-
-
-// echo "Doing signature\n";
-// Create a server signature using an HMAC key (result encoded as HEX string)
-$signature = hash_hmac("sha256", $challenge, "hmac_key", false);
-
-
-// echo "Doing echoing\n";
-// Return JSON-encoded data
-?>
-
+function crear_challenge(string $salt = bin2hex(random_bytes(12)), int $secret_number = random_int(100_000, 350_000))
 {
+    global $env;
+
+    $algorithm = $env['ALTCHA_HMAC_KEY'];
+
+    $challenge = hash($algorithm, $salt . $secret_number);
+
+    $signature = hash_hmac($algorithm, $challenge, $env['ALTCHA_HMAC_KEY']);
+
+    return ['algorithm' => $algorithm, 'challenge' => $challenge, 'signature' => $signature];
+}
+
+if (isset($_GET['crear-challenge'])) {
+    $challenge = crear_challenge();
+
+    // Return JSON-encoded data
+
+    header("Content-Type: application/json");
+    ?>{
     "algorithm": "SHA-256",
-    "challenge": "<?php echo $challenge; ?>",
-    "salt": "<?php echo $salt; ?>",
-    "signature": "<?php echo $signature; ?>"
+    "challenge": "<?php echo $challenge['challenge']; ?>",
+    "salt": "<?php echo $challenge['salt']; ?>",
+    "signature": "<?php echo $challenge['signature']; ?>"
+    }
+    <?php
 }
