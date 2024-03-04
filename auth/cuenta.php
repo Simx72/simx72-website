@@ -36,10 +36,6 @@ if (!$auth->isLoggedIn()) {
 
 
 <div class="container">
-	<p>
-		Bienvenido
-		<?php echo $auth->getUsername(); ?>
-	</p>
 
 	<div class="row justify-content-around w-100">
 		<div class="col-md-1"></div>
@@ -49,9 +45,11 @@ if (!$auth->isLoggedIn()) {
 					alt="Imagen de perfil de <?php echo $auth->getUsername(); ?>" />
 				<br>
 				<form action="./img-cuenta.php?accion=cambiar" method="post" enctype="multipart/form-data">
-					<input type="file" style="visibility:hidden;" id="imagen-perfil" name="imagen" aria-label="Cambiar imagen">
+					<input type="file" style="visibility:hidden;" id="imagen-perfil" name="imagen"
+						aria-label="Cambiar imagen">
 					<div class="input-group mb-3">
-						<label class="btn btn-secondary" for="imagen-perfil">
+						<label class="btn btn-secondary puntos-suspensivos" style="max-width: 160px;"
+							for="imagen-perfil" id="elegir-imagen">
 							Elegir imagen
 						</label>
 						<button class="btn btn-primary" type="submit" id="subir-imagen-perfil">
@@ -60,6 +58,17 @@ if (!$auth->isLoggedIn()) {
 						</button>
 					</div>
 				</form>
+				<script>
+					document.addEventListener('DOMContentLoaded', _ => {
+						/** @type {HTMLInputElement} */
+						let imgPerfil = document.getElementById('imagen-perfil');
+
+						let btn = document.getElementById('elegir-imagen');
+						imgPerfil.addEventListener('change', _ => {
+							btn.innerText = imgPerfil.value.split('\\').pop().split('/').pop();
+						});
+					})
+				</script>
 				<div class="w-100 text-center nodis">
 					formato: jpeg o png
 				</div>
@@ -69,14 +78,18 @@ if (!$auth->isLoggedIn()) {
 		<div class="col-md-1"></div>
 		<div class="col-md-6">
 			<div class="bloque">
+				<p>
+					Bienvenido
+					<?php echo $auth->getUsername(); ?>
+				</p>
 			</div>
 		</div>
 	</div>
+	<br><br>
 
-	<div>
-		<a href="./cerrar_sesion.php">Cerrar sesión</a>
+	<div class="d-grid gap-2">
+		<a href="./cerrar_sesion.php" class="btn btn-danger text-white" type="button">Cerrar sesión</a>
 	</div>
-
 </div>
 
 

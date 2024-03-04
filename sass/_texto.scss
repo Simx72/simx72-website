@@ -47,10 +47,12 @@ $tamannos: (
 
 a {
     color: var(--link-color);
+
     &:link {
         color: var(--link-color);
         opacity: 100%;
     }
+
     &:visited {
         color: var(--link-color-visited);
         opacity: 70%;
@@ -65,4 +67,10 @@ a.normal {
 
 .nav a {
     color: var(--link-color);
+}
+
+.puntos-suspensivos {
+    text-overflow: ellipsis;
+    white-space: nowrap;
+    overflow: hidden;
 }
