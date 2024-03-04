@@ -69,9 +69,12 @@ body>#header {
 
 /* ## Organización ## */
 
+.container>.bloque {
+	@extend .center;
+}
+
 /* bloques */
 .bloque { /* bloque básico */
-	@extend .center;
 	max-width: 900px;
 	background-color: rgba($color: rgb(159, 159, 159), $alpha: .7);
 	border-radius: 1.6rem;

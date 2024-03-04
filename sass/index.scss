@@ -40,6 +40,12 @@ header .img-de-perfil {
     $size: 2em;
     width: $size;
     height: $size;
-    aspect-ratio: 1;
     border-radius: 100%;
+}
+
+
+.img-de-perfil {
+    aspect-ratio: 1 !important;
+    width: 100%;
+    background-color: #383838dc;
 }
