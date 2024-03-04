@@ -34,16 +34,10 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"])) {
     
     try {
         $auth->login($_POST['correo-e'], $_POST['clave']);
-        head();
-        ?>
-        <div class="container">
-            <p>Ingreso exitoso</p>
-            <p>
-                Ir a <a href="./cuenta.php">mi cuenta</a>.
-            </p>
-        </div>
-        <?php
-        pies();
+        if ($auth->isLoggedIn()) {
+            header('Location: ./cuenta.php');
+            die;
+        }
     }
     catch (\Delight\Auth\InvalidEmailException $e) {
         $saca_error = 'Wrong email address';
