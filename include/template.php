@@ -80,7 +80,6 @@ function head()
 	<?php
 		myheader();
 	?>
-	<script type="module" src="/static/js/transicion.js"></script>
 	<section id="cuerpo">
 	<?php
 }
