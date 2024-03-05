@@ -1,6 +1,5 @@
 #server
 .ht*
-.cpanel.yml
 
 # build
 node_modules/
