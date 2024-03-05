@@ -29,9 +29,9 @@ echo "\t  \n";
 
 // if (attempting to register)
 if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2"]) && isset($_POST["apodo"]) && isset($_POST['altcha'])) {
-    $correo = $_POST["correo-e"]; $clave = $_POST["clave"]; $clave2 = $_POST["clave-2"]; $apodo = $_POST["apodo"]; $altcha = $_POST['$altcha'];
+    $correo = $_POST["correo-e"]; $clave = $_POST["clave"]; $clave2 = $_POST["clave-2"]; $apodo = $_POST["apodo"]; $altcha = $_POST['altcha'];
     try {
-        if (validar_altcha($altcha)) {
+        if (!altcha_es_valido($altcha)) {
             $saca_error = "Altcha inválido";
             throw new Exception("Altcha could not be verified");
         }
@@ -63,6 +63,7 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
         head();
         echo "<div class=\"container\">Bien, ahora revisa tu correo $correo para activar tu cuenta</div>";
         pies();
+        die;
 
     }
     catch (\Delight\Auth\InvalidEmailException $e) {
@@ -76,19 +77,25 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
     }
     catch (\Delight\Auth\TooManyRequestsException $e) {
         $saca_error = 'Too many requests';
+    } catch (Exception $exception) {
+        if ($saca_error == "") {
+            echo 'Error 500';
+            throw $exception;
+        }
     }
 
-    if ($saca_error != "") {
-        head();
-        alerta_error($saca_error, "registro.php");
-        pies();
-    }
+    head();
+    alerta_error($saca_error, "registro.php");
+    pies();
+
 
 } else { // if (not registering)
 
     
     head();
     ?>
+
+<script async defer src="../vendor/altcha-org/altcha/dist/altcha.js" type="module"></script>
 
 <!-- Tight container -->
 <div class="container">
@@ -137,13 +144,14 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
                     <small id="helpId-clave" class="form-text text-info">Escriba la clave de nuevo</small>
                 </div>
 
+                <br>
+                
+                <div class="d-flex justify-content-center">
+                    <!-- Altcha -->
+                    <altcha-widget challengeurl="./challenge.php?accion=challenge"></altcha-widget>
+                </div>
+                
                 <br><br>
-                
-                
-                <!-- Altcha -->
-                <altcha-widget challengeurl="./challenge.php"></altcha-widget>
-                <br> 
-                
                 
                 <!-- Enviar -->
                 <div class="mb-3">

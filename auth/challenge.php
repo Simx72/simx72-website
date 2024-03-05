@@ -15,32 +15,18 @@
  */
 //
 
-require_once __DIR__ . '../include/env.php';
 
-function crear_challenge(string $salt = bin2hex(random_bytes(12)), int $secret_number = random_int(100_000, 350_000))
-{
-    global $env;
+require_once __DIR__ . '/../include/auth.php';
 
-    $algorithm = $env['ALTCHA_HMAC_KEY'];
-
-    $challenge = hash($algorithm, $salt . $secret_number);
-
-    $signature = hash_hmac($algorithm, $challenge, $env['ALTCHA_HMAC_KEY']);
-
-    return ['algorithm' => $algorithm, 'challenge' => $challenge, 'signature' => $signature];
-}
-
-if (isset($_GET['crear-challenge'])) {
-    $challenge = crear_challenge();
-
-    // Return JSON-encoded data
-
-    header("Content-Type: application/json");
-    ?>{
-    "algorithm": "SHA-256",
-    "challenge": "<?php echo $challenge['challenge']; ?>",
-    "salt": "<?php echo $challenge['salt']; ?>",
-    "signature": "<?php echo $challenge['signature']; ?>"
+// if ?accion=challenge
+if (isset($_GET['accion'])) {
+    if ($_GET['accion'] == 'challenge') {
+        $challenge = crear_challenge(null, null);
+        
+        // Return JSON-encoded data
+        
+        header("Content-Type: application/json");
+        echo json_encode($challenge);
+        
     }
-    <?php
 }

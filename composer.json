@@ -7,7 +7,8 @@
 		"delight-im/auth": "^8.3",
 		"phpmailer/phpmailer": "^6.9",
 		"twbs/bootstrap-icons": "^1.11",
-		"firacode/firacode": "6.2"
+		"firacode/firacode": "6.2",
+		"altcha-org/altcha": "0.1.9"
 	},
 	"require-dev": {
 		"scssphp/scssphp": "^1.12"
@@ -34,6 +35,17 @@
 				"version": "6.2",
 				"dist": {
 					"url": "https://github.com/tonsky/FiraCode/releases/download/6.2/Fira_Code_v6.2.zip",
+					"type": "zip"
+				}
+			}
+		},
+		{
+			"type": "package",
+			"package": {
+				"name": "altcha-org/altcha",
+				"version": "0.1.9",
+				"dist": {
+					"url": "https://github.com/altcha-org/altcha/archive/refs/tags/0.1.9.zip",
 					"type": "zip"
 				}
 			}

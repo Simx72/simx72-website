@@ -170,13 +170,14 @@ function pies()
 
 function alerta_error(string $error, string $volver_a = "", string $mensaje = "Ocurrió un error mientras se procesaba su solicitud.") {
 	?>
-	<div
-            class="alert alert-danger"
-            role="alert"
+	<div class="container">
+		<div
+		class="alert alert-danger"
+		role="alert"
         >
-            <strong>Error: <?php echo htmlspecialchars($error); ?></strong>
-            <p><?php echo $mensaje; ?></p>
-			<?php
+		<strong>Error: <?php echo htmlspecialchars($error); ?></strong>
+		<p><?php echo $mensaje; ?></p>
+		<?php
 			if ($volver_a != "") {
 				?>
 				<a href="<?php echo $volver_a; ?>">Volver ↩️</a>
@@ -184,5 +185,6 @@ function alerta_error(string $error, string $volver_a = "", string $mensaje = "O
 			}
 			?>
         </div>
+	</div>
 	<?php
 }

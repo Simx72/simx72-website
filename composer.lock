@@ -4,8 +4,17 @@
         "Read more about it at https://getcomposer.org/doc/01-basic-usage.md#installing-dependencies",
         "This file is @generated automatically"
     ],
-    "content-hash": "ab3396a43b45ce67a5027fed4eb08902",
+    "content-hash": "78160fac5618365312767bb550b1d74e",
     "packages": [
+        {
+            "name": "altcha-org/altcha",
+            "version": "0.1.9",
+            "dist": {
+                "type": "zip",
+                "url": "https://github.com/altcha-org/altcha/archive/refs/tags/0.1.9.zip"
+            },
+            "type": "library"
+        },
         {
             "name": "delight-im/auth",
             "version": "v8.3.0",
