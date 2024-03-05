@@ -15,10 +15,8 @@
  */
 
 
+require_once __DIR__ . '/../include/auth.php';
 
-require "./include/template.php";
+$auth->logOut();
 
-template_config("FAQ", __FILE__);
-
-head();
-pies();
+header('Location: ./ingreso.php');

@@ -1,11 +1,8 @@
 /*
- * File: <project root>/sass/_general.scss
+ * File: <project root>/sass/estructura.scss
  * Project: simx72-website
  * File Created: Saturday, 25th November 2023 11:58:55 pm
  * Author: Simx72 (angel2600@proton.me)
- * -----
- * Last Modified: Sunday, 3rd December 2023 3:25:54 pm
- * Modified By: Simx72 (angel2600@proton.me>)
  * -----
  * Copyright (C) 2023  Simx72
  * This program is free software: you can redistribute it and/or modify
@@ -72,9 +69,12 @@ body>#header {
 
 /* ## Organización ## */
 
+.container>.bloque {
+	@extend .center;
+}
+
 /* bloques */
 .bloque { /* bloque básico */
-	@extend .center;
 	max-width: 900px;
 	background-color: rgba($color: rgb(159, 159, 159), $alpha: .7);
 	border-radius: 1.6rem;

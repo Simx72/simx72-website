@@ -1,14 +1,13 @@
 <?php
 /*
- * File: <project root>/licencia.php
- * Project: simx72-website
- * File Created: Thursday, 30th November 2023 9:08:48 pm
- * Author: Simx72 (angel2600@proton.me)
+ * Simx72 website
+ * 
+ * @author Simx72
+ * @link mailto:angel2600@proton.me
+ * @link http://sdesim.ca/
+ * @license https://www.gnu.org/licenses/gpl-3.0.en.html
  * -----
- * Last Modified: Sunday, 3rd December 2023 3:24:17 pm
- * Modified By: Simx72 (angel2600@proton.me>)
- * -----
- * Copyright (C) 2023  Simx72
+ * Copyright (C) 2024  Simx72
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
@@ -16,12 +15,11 @@
  */
 
 
-
-require "./include/base.php";
+require "./include/template.php";
 
 template_config("Licencia", __FILE__);
 
-fullhead();
+head();
 ?>
 <style>
 

@@ -15,10 +15,4 @@
  */
 
 
-
-require "./include/template.php";
-
-template_config("FAQ", __FILE__);
-
-head();
-pies();
+header('Location: ./ingreso.php');

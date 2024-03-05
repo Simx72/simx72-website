@@ -1,21 +1,20 @@
 <?php
 /*
- * File: <project root>/include/base.php
- * Project: simx72-website
- * File Created: Sunday, 26th November 2023 12:17:10 am
- * Author: Simx72 (angel2600@proton.me)
+ * Simx72 website
+ * 
+ * @author Simx72
+ * @link mailto:angel2600@proton.me
+ * @link http://sdesim.ca/
+ * @license https://www.gnu.org/licenses/gpl-3.0.en.html
  * -----
- * Last Modified: Sunday, 3rd December 2023 3:43:10 pm
- * Modified By: Simx72 (angel2600@proton.me>)
- * -----
- * Copyright (C) 2023  Simx72
+ * Copyright (C) 2024  Simx72
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU Affero General Public License as published by
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
  */
 
-
+require_once 'auth.php';
 
 $titulo = "[Título]";
 $nom_sitio = "sdesim.ca";
@@ -64,6 +63,10 @@ function head()
 
 	<link rel="stylesheet" href="/build/css/index.css?<?php echo filemtime(dirname(__FILE__).'/../build/css/index.css'); ?>">
 
+	<?php 
+	// <script async defer src="/node_modules/altcha/dist/altcha.js" type="module"></script> --> 
+	?>
+
 	<title><?php echo $titulo." - ".$nom_sitio; ?></title>
 </head>
 <body>
@@ -74,6 +77,7 @@ function head()
 
 function myheader()
 {
+	global $auth;
 	?>
 	<div class="text-bg-dark border-bottom">
 		<header class="d-flex flex-wrap align-items-center justify-content-center justify-content-md-around py-3">
@@ -83,7 +87,7 @@ function myheader()
 				It works
 			</div>
 
-			<ul class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
+			<ul id="header_tabs" class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 				<?php /* T*T volver amarillo si se para en él (con un script) */ ?>
 				<li><a href="/"				class="normal px-2 link-primary">Inicio</a></li>
 				<li><a href="/juegos.php"	class="normal px-2">Juegos</a></li>
@@ -93,9 +97,22 @@ function myheader()
 				<li><a href="/sobre_mi.php"	class="normal px-2">Sobre mí</a></li>
 			</ul>
 
+
 			<div class="col-md-3 text-end">
-				<button type="button" class="btn btn-outline-primary me-2">Login</button>
-				<button type="button" class="btn btn-primary">Sign-up</button>
+				<a href="/auth/ingreso.php">
+					<button type="button" class="btn btn-outline-primary me-2">
+						<?php
+						if (!$auth->isLoggedIn()) {
+							echo 'Cuenta';
+						} else {
+							?>
+								<img class="img-de-perfil" src="/auth/img-cuenta.php?accion=defecto" alt="Imagen de perfil de la cuenta">
+								<span><?php echo substr($auth->getUsername(), 0, 10); ?></span>
+							<?php
+						}
+						?>
+					</button>
+				</a>
 			</div>
 
 		</header>
@@ -149,5 +166,26 @@ function pies()
 		</section>
 	</body>
 </html>
+	<?php
+}
+
+function alerta_error(string $error, string $volver_a = "", string $mensaje = "Ocurrió un error mientras se procesaba su solicitud.") {
+	?>
+	<div class="container">
+		<div
+		class="alert alert-danger"
+		role="alert"
+        >
+		<strong>Error: <?php echo htmlspecialchars($error); ?></strong>
+		<p><?php echo $mensaje; ?></p>
+		<?php
+			if ($volver_a != "") {
+				?>
+				<a href="<?php echo $volver_a; ?>">Volver ↩️</a>
+				<?php
+			}
+			?>
+        </div>
+	</div>
 	<?php
 }

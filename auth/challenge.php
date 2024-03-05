@@ -13,12 +13,20 @@
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
  */
+//
 
 
+require_once __DIR__ . '/../include/auth.php';
 
-require "./include/template.php";
-
-template_config("FAQ", __FILE__);
-
-head();
-pies();
+// if ?accion=challenge
+if (isset($_GET['accion'])) {
+    if ($_GET['accion'] == 'challenge') {
+        $challenge = crear_challenge(null, null);
+        
+        // Return JSON-encoded data
+        
+        header("Content-Type: application/json");
+        echo json_encode($challenge);
+        
+    }
+}

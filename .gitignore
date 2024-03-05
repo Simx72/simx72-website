@@ -1,2 +1,9 @@
+#server
+.ht*
+
+# build
 node_modules/
-.htaccess
+
+# apps
+/blog/
+/projects/

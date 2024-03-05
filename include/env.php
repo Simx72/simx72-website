@@ -16,9 +16,4 @@
 
 
 
-require "./include/template.php";
-
-template_config("FAQ", __FILE__);
-
-head();
-pies();
+$env = parse_ini_file('.ht.env');
