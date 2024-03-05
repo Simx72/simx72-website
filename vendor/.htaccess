@@ -1,0 +1,6 @@
+Options -Indexes
+Require all denied
+
+<FilesMatch "\.(jpe?g|gif|png|css)$">
+	Require all granted
+</FilesMatch>
