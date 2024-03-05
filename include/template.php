@@ -98,11 +98,11 @@ function myheader()
 
 			<ul id="header_tabs" class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 				<?php /* T*T volver amarillo si se para en él (con un script) */ ?>
-				<li><a href="/"				class="normal px-2 link-primary">Inicio</a></li>
-				<li><a href="/juegos.php"	class="normal px-2">Juegos</a></li>
-				<li><a href="/blog.php"		class="normal px-2">Blog</a></li>
-				<li><a href="/faq.php"		class="normal px-2">FAQ</a></li>
-				<li><a href="/sobre_mi.php"	class="normal px-2">Sobre mí</a></li>
+				<li><a href="/"				class="header-tab normal px-2 link-primary">Inicio</a></li>
+				<li><a href="/juegos.php"	class="header-tab normal px-2">Juegos</a></li>
+				<li><a href="/blog.php"		class="header-tab normal px-2">Blog</a></li>
+				<li><a href="/faq.php"		class="header-tab normal px-2">FAQ</a></li>
+				<li><a href="/sobre_mi.php"	class="header-tab normal px-2">Sobre mí</a></li>
 			</ul>
 
 
@@ -178,6 +178,7 @@ function pies()
 				</div>
 			</div>
 		</section>
+		<script type="module" src="/static/js/transicion.js"></script>
 	</body>
 </html>
 	<?php
