@@ -31,6 +31,13 @@ function template_config($title, $__FILE__) {
 function head()
 {
 	global $titulo, $nom_sitio, $fileyear;
+
+	if (isset($_GET['plantilla'])) {
+		if ($_GET['plantilla'] == 'no') {
+			return;
+		}
+	}
+	
 	?>
 
 	<!-- 
@@ -70,9 +77,11 @@ function head()
 	<title><?php echo $titulo." - ".$nom_sitio; ?></title>
 </head>
 <body>
-<?php
-	myheader();
-	?> <section id="cuerpo"> <?php
+	<?php
+		myheader();
+	?>
+	<section id="cuerpo">
+	<?php
 }
 
 function myheader()
@@ -130,6 +139,12 @@ function fullhead() {
 function pies()
 {
 	global $fileyear;
+	if (isset($_GET['plantilla'])) {
+		if ($_GET['plantilla'] == 'no') {
+			return;
+		}
+	}
+	
 	?>
 		</section>
 		<div id="footer-1" class="footer row sticky">
