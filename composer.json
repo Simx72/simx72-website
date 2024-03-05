@@ -26,7 +26,7 @@
 			"php vendor/bin/pscss ./sass/index.scss ./build/css/index.css --sourcemap --style=expanded"
 		]
 	},
-	"version": "0.1.0",
+	"version": "0.2.0",
 	"repositories": [
 		{
 			"type": "package",
