@@ -18,9 +18,8 @@
 require_once __DIR__ . '/../include/auth.php';
 require_once __DIR__ . '/../include/template.php';
 
-/* $auth-> */
 
-$titulo = "Registro";
+template_config('Registro', __FILE__);
 
 
 $saca_error = "";
