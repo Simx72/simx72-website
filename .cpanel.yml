@@ -1,4 +1,4 @@
 ---
 deployment:
-	tasks:
-		- ./deploy
+  tasks:
+    - /bin/sh ./deploy
