@@ -91,8 +91,7 @@ function myheader()
 				<?php /* T*T volver amarillo si se para en él (con un script) */ ?>
 				<li><a href="/"				class="normal px-2 link-primary">Inicio</a></li>
 				<li><a href="/juegos.php"	class="normal px-2">Juegos</a></li>
-				<li><a href="/blog.php"		class="normal px-2">Secciones</a></li>
-				<li><a href="/secciones.php"		class="normal px-2">Blog</a></li>
+				<li><a href="/blog.php"		class="normal px-2">Blog</a></li>
 				<li><a href="/faq.php"		class="normal px-2">FAQ</a></li>
 				<li><a href="/sobre_mi.php"	class="normal px-2">Sobre mí</a></li>
 			</ul>

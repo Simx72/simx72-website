@@ -1,6 +1,11 @@
 * ~~Añadir bootstrap al header y al footer~~
 * ~~instalar bootstrap~~
 * ~~Hacer el header responsive~~
-* crear páginas Juegos, Secciones, Blog, FAQ, Git, Sobre mí
 * ~~hacer el footer responsive~~
 * script para pasar paginas a lo smooth 
+* crear páginas Juegos, Blog, FAQ, Git, Sobre mí
+    1. Juegos
+    2. Blog
+    1. Sobre mí
+    3. FAQ
+    4. Git
