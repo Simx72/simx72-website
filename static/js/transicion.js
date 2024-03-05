@@ -12,8 +12,13 @@
  * the Free Software Foundation, either version 3 of the License, or
  * any later version.
  */
+//
 
-import { ajax } from "./funciones";
+// console.log('iniciado')
+
+
+
+import { ajax } from "./funciones.js";
 
 
 
@@ -21,7 +26,10 @@ function transicion(href) {
     let url = new URL(href);
     url.searchParams.append('plantilla', 'no');
 
+    // console.log('pidiendo: ', url);
+    
     ajax('GET', url).then( xhr => {
+        console.log('obtenido: ', xhr);
         let cuerpo =document.getElementById('cuerpo');
         cuerpo.innerHTML = xhr.responseText;
     });
@@ -30,6 +38,12 @@ function transicion(href) {
 
 let headerTabs = document.querySelectorAll('.header-tab');
 
+// console.log(headerTabs);
+
 headerTabs.forEach(tab => {
-    tab.addEventListener('click', () => transicion(tab.href));
+    // console.log('tab:', tab);
+    tab.addEventListener('click', ev => {
+        ev.preventDefault();
+        transicion(tab.href)
+    });
 })
