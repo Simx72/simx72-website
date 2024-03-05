@@ -99,16 +99,16 @@ function myheader()
 
 			<ul id="header_tabs" class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 				<?php /* T*T volver amarillo si se para en él (con un script) */ ?>
-				<li><a href="/"				class="header-tab normal px-2 link-primary">Inicio</a></li>
-				<li><a href="/juegos.php"	class="header-tab normal px-2">Juegos</a></li>
-				<li><a href="/blog.php"		class="header-tab normal px-2">Blog</a></li>
-				<li><a href="/faq.php"		class="header-tab normal px-2">FAQ</a></li>
-				<li><a href="/sobre_mi.php"	class="header-tab normal px-2">Sobre mí</a></li>
+				<li><a href="/"				class="header-link normal px-2 link-primary">Inicio</a></li>
+				<li><a href="/juegos.php"	class="header-link normal px-2">Juegos</a></li>
+				<li><a href="/blog.php"		class="header-link normal px-2">Blog</a></li>
+				<li><a href="/faq.php"		class="header-link normal px-2">FAQ</a></li>
+				<li><a href="/sobre_mi.php"	class="header-link normal px-2">Sobre mí</a></li>
 			</ul>
 
 
 			<div class="col-md-3 text-end">
-				<a href="/auth/ingreso.php">
+				<a href="/auth/ingreso.php" class="header-link">
 					<button type="button" class="btn btn-outline-primary me-2">
 						<?php
 						if (!$auth->isLoggedIn()) {

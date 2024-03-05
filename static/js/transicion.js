@@ -39,7 +39,7 @@ async function transicion(href) {
 
 }
 
-let headerTabs = document.querySelectorAll('.header-tab');
+let headerTabs = document.querySelectorAll('.header-link');
 
 // console.log(headerTabs);
 
