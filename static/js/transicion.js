@@ -22,17 +22,20 @@ import { ajax } from "./funciones.js";
 
 
 
-function transicion(href) {
+async function transicion(href) {
     let url = new URL(href);
     url.searchParams.append('plantilla', 'no');
 
     // console.log('pidiendo: ', url);
+
+    let xhr = await ajax('GET', url);
+
+    // console.log('obtenido: ', xhr);
+
+    let cuerpo = document.getElementById('cuerpo');
+    cuerpo.innerHTML = xhr.responseText;
     
-    ajax('GET', url).then( xhr => {
-        console.log('obtenido: ', xhr);
-        let cuerpo =document.getElementById('cuerpo');
-        cuerpo.innerHTML = xhr.responseText;
-    });
+    window.history.pushState({ from: window.href }, "", href);
 
 }
 

@@ -80,6 +80,7 @@ function head()
 	<?php
 		myheader();
 	?>
+	<script type="module" src="/static/js/transicion.js"></script>
 	<section id="cuerpo">
 	<?php
 }
@@ -178,7 +179,6 @@ function pies()
 				</div>
 			</div>
 		</section>
-		<script type="module" src="/static/js/transicion.js"></script>
 	</body>
 </html>
 	<?php
