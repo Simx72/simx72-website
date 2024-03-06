@@ -24,6 +24,11 @@ body, html {
 
 body {
 	background-color: #202020;
+	background-image: url('/asset.php?name=background');
+	background-repeat: no-repeat;
+	background-attachment: fixed;
+	background-size: cover;
+	background-position: center;
 	color: #FFFFFF;
 	font-family: 'Fira Code', 'Courier New', Courier, monospace;
 }

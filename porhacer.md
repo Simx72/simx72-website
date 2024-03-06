@@ -2,7 +2,7 @@
 * ~~instalar bootstrap~~
 * ~~Hacer el header responsive~~
 * ~~hacer el footer responsive~~
-* Fondo
+* ~~Fondo~~
 * crear páginas Juegos, Blog, FAQ, Git, Sobre mí
     1. Juegos
     2. Blog
