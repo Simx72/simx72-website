@@ -79,6 +79,8 @@ head();
 
             <br />
 
+            <?php verificar_conexion(); ?>
+
             <form action="ingreso.php" method="post">
                 <!-- Correo -->
                 <div class="mb-3">

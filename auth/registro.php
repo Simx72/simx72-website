@@ -108,6 +108,8 @@ if (isset($_POST["correo-e"]) && isset($_POST["clave"]) && isset($_POST["clave-2
             <h1>Registrarse</h1>
             
             <br/>
+
+            <?php verificar_conexion(); ?>
             
             <form action="registro.php" method="post">
                 <!-- Correo -->
