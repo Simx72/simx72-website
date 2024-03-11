@@ -17,12 +17,14 @@
 	box-sizing: border-box;
 }
 
-body, html {
+body,
+html {
 	margin: 0;
 	padding: 0;
 }
 
 body {
+	width: 100% !important;
 	background-color: #202020;
 	background-image: url('/asset.php?name=background');
 	background-repeat: no-repeat;
@@ -31,6 +33,7 @@ body {
 	background-position: center;
 	color: #FFFFFF;
 	font-family: 'Fira Code', 'Courier New', Courier, monospace;
+	overflow-x: hidden;
 }
 
 /* Header */
@@ -39,7 +42,7 @@ body>#header {
 	background-color: #353535;
 	display: flex;
 	flex-direction: row;
-	align-items: center;   
+	align-items: center;
 }
 
 /* Cuerpo */
@@ -50,26 +53,31 @@ body>#header {
 }
 
 #footer-1 {
-	width: 100vw;
+	width: 100%;
+	margin: 0;
+	background: darkblue;
+}
+
+#footer-2 {
+	margin: 2rem 0;
+}
+
+#footer-3 {
+	margin: 2rem 0;
+	text-align: center;
 }
 
 #footer {
-	#footer-box {
-		background-color: darkblue;
-		padding: 1rem;
-		width: 100vw;
-		>.footer {
-			max-width: 900px;
-		}
-	}
+	background-color: darkblue;
+	margin: 0;
+	overflow: auto;
 }
 
-.sticky {
+.stick-to-bottom {
 	position: -webkit-sticky;
 	position: sticky;
 	bottom: 0;
-	width: 100vw;
-	background: darkblue;
+	left: 0;
 }
 
 /* ## Organización ## */
@@ -79,7 +87,8 @@ body>#header {
 }
 
 /* bloques */
-.bloque { /* bloque básico */
+.bloque {
+	/* bloque básico */
 	max-width: 900px;
 	background-color: rgba($color: rgb(159, 159, 159), $alpha: .7);
 	border-radius: 1.6rem;
@@ -91,10 +100,12 @@ body>#header {
 .left {
 	margin-right: auto;
 }
+
 .center {
 	margin-right: auto;
 	margin-left: auto;
 }
+
 .right {
 	margin-left: auto;
 }
@@ -102,6 +113,7 @@ body>#header {
 .f-left {
 	float: left;
 }
+
 .f-right {
 	float: right;
 }
@@ -109,4 +121,3 @@ body>#header {
 .mw-900 {
 	max-width: 900px;
 }
-

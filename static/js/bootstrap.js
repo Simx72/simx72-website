@@ -1,4 +1,3 @@
-<?php
 /*
  * Simx72 website
  * 
@@ -16,10 +15,5 @@
 
 
 
-
-require "./include/template.php";
-
-template_config("Juegos", __FILE__);
-
-head();
-pies();
+const tooltipTriggerList = document.querySelectorAll('[data-bs-toggle="tooltip"]')
+const tooltipList = [...tooltipTriggerList].map(tooltipTriggerEl => new bootstrap.Tooltip(tooltipTriggerEl))
