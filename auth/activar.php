@@ -19,6 +19,8 @@
 require_once __DIR__ . '/../include/auth.php';
 require_once __DIR__ . '/../include/template.php';
 
+template_config('Activar cuenta', __FILE__);
+
 head();
 
 $saca_error = "";
