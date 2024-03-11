@@ -15,9 +15,10 @@
  */
 
 require_once 'auth.php';
+require_once 'env.php';
 
 $titulo = "[Título]";
-$nom_sitio = "sdesim.ca";
+$nom_sitio = $env["NOMBRE_SITIO"] ?? "sitio.local";
 $filepath = __FILE__;
 $fileyear = "2023"; // replace with current year
 
