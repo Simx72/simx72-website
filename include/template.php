@@ -105,7 +105,7 @@ function myheader()
 					<ul id="header-tabs" class="nav col-12 col-md-auto mb-2 justify-content-center mb-md-0">
 						<?php /* T*T volver amarillo si se para en él (con un script) */ ?>
 						<li><a href="/" class="header-link normal px-2">Inicio</a></li>
-						<li><a href="/juegos.php" class="header-link normal px-2">Juegos</a></li>
+						<li><a href="/juegos/index.php" class="header-link normal px-2">Juegos</a></li>
 						<li><a href="/blog.php" class="header-link normal px-2">Blog</a></li>
 						<li><a href="/faq.php" class="header-link normal px-2">FAQ</a></li>
 						<li><a href="/sobre_mi.php" class="header-link normal px-2">Sobre mí</a></li>

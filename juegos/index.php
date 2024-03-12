@@ -31,36 +31,65 @@ head();
 
 
 
-function imagen_juego()
+function imagen_juego(int $id, string $nombre, string $href, string $desc = "")
 {
     ?>
-    
-    <div class="col-2 boton-juego"
-        data-bs-toggle="tooltip"
+    <div class="col-2 col-juego"
     >
-    <!-- Poner tooltips T*T -->
-        <img src="/auth/img-cuenta.php" alt=""
-        data-bs-toggle="tooltip" data-bs-placement="bottom" data-bs-title="Tooltip del juego"
-        data-bs-custom-class="boton-juego-tooltip"
-        >
+    <!-- Ponerlo tooltips T*T -->
+        <a class="boton-juego" href="<?php echo $href; ?>" target="_blank" >
+            <img src="./img-juego.php?id=<?php echo dechex($id); ?>"
+            alt="Imagen de <?php echo htmlspecialchars($nombre); ?>"
+            data-bs-toggle="tooltip" data-bs-placement="auto"
+            data-bs-title="<b><?php echo htmlspecialchars($nombre); ?></b><br/><?php echo $desc; ?>"
+            data-bs-custom-class="boton-juego-tooltip"
+            data-bs-html="true"
+            >
+        </a>
     </div>
     <?php
 }
 
 
+function get_juegos(): array {
+    global $db;
+    $query_string = "SELECT * FROM `juegos` WHERE `hidden` = 0";
+    $query = $db->prepare($query_string);
+    $worked = $query->execute();
+    if ($worked) {
+        $res = $query->fetchAll();
+        return $res;
+    }
+    return array();
+}
+
+$juegos = get_juegos();
+
+// si sí hay juegos
+if (sizeof($juegos) > 0) {
 ?>
 <div class="row justify-content-center align-items-start g-2">
 
     <?php
 
-    for ($i = 0; $i < 30; $i++) {
-        imagen_juego();
+    foreach ($juegos as $juego) {
+        imagen_juego($juego["id"], $juego["nombre"], $juego["href"], $juego["desc"]);
     }
 
     ?>
 </div>
 
 <?php
+} else {
+    // si no hay juegos
+    ?>
+        <div class="container-sm">
+            <div class="bloque mx-auto">
+                Por ahora no hay ningún juego disponible 😿
+            </div>
+        </div>
+    <?php
+}
 
 
 pies();

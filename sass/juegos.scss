@@ -1,11 +1,11 @@
 
-.boton-juego {
+.col-juego {
     aspect-ratio: 1;
     display: flex;
     align-items: center;
     justify-content: center;
     
-    img {
+    .boton-juego {
         width: 70%;
         aspect-ratio: 1;
         border-radius: 10px;
@@ -15,11 +15,17 @@
         &:hover {
             width: 100%;
         }
+
+        img {
+            width: 100%;
+            aspect-ratio: 1;
+        }
     }
 
 
 }
 
 .boton-juego-tooltip {
-    
+    --bs-tooltip-bg: var(--bs-info);
+    --bs-tooltip-color: var(--bs-white);
 }
