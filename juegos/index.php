@@ -36,7 +36,6 @@ function imagen_juego(int $id, string $nombre, string $href, string $desc = "")
     ?>
     <div class="col-2 col-juego"
     >
-    <!-- Ponerlo tooltips T*T -->
         <a class="boton-juego" href="<?php echo $href; ?>" target="_blank" >
             <img src="./img-juego.php?id=<?php echo dechex($id); ?>"
             alt="Imagen de <?php echo htmlspecialchars($nombre); ?>"
