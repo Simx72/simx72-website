@@ -8,11 +8,11 @@
     .boton-juego {
         width: 70%;
         aspect-ratio: 1;
-        border-radius: 10px;
         cursor: pointer;
         transition-duration: 500ms;
-
+        
         &:hover {
+            border-radius: 10px;
             width: 100%;
         }
 
