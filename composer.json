@@ -21,9 +21,9 @@
 		}
 	],
 	"scripts": {
-		"build": "php vendor/bin/pscss ./sass/index.scss ./build/css/index.css --sourcemap --style=expanded",
+		"build": "php vendor/bin/pscss ./sass/index.scss ./build/css/index.css && php vendor/bin/pscss ./sass/juegos.scss ./build/css/juegos.css",
 		"post-install-cmd": [
-			"php vendor/bin/pscss ./sass/index.scss ./build/css/index.css --sourcemap --style=expanded"
+			"composer build"
 		]
 	},
 	"version": "0.2.0",
