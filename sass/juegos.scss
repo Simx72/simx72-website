@@ -12,11 +12,11 @@
         transition-duration: 500ms;
         
         &:hover {
-            border-radius: 10px;
             width: 100%;
         }
-
+        
         img {
+            border-radius: 10px;
             width: 100%;
             aspect-ratio: 1;
         }
